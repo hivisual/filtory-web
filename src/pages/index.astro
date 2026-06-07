@@ -1,292 +1,416 @@
 ---
-const WA_LINK = "https://wa.me/62816957050?text=Halo%20Filtory%2C%20saya%20mau%20beli%20Labbet%20Premium%20(Rp50.000)";
-const SHOPEE_LINK = "https://s.shopee.co.id/1gG3IthAYI";
-
-const features = [
-  { icon: "✦", title: "Semua Preset & Edits", desc: "Scanned, Demar, Luxra, Laurel, Index — seluruh koleksi eksklusif langsung terbuka." },
-  { icon: "◈", title: "Grain Film Realistis", desc: "Tekstur film analog yang terasa nyata. Bukan sekadar filter digital murahan." },
-  { icon: "◉", title: "Light Leak & Dust", desc: "Efek optical yang membuat foto terasa seperti hasil scan negatif sungguhan." },
-  { icon: "◐", title: "Export Tanpa Batas", desc: "Ekspor foto resolusi penuh kapan saja, sebanyak yang kamu mau." },
-];
-
-const reviews = [
-  { name: "s*****a", stars: 5, text: "Gila responsif banget adminnya, beli jam 12 malam langsung aktif. Preset-nya bagus semua!" },
-  { name: "r*****i", stars: 5, text: "Worth it banget, beda banget hasilnya dari yang gratis. Foto jadi keliatan lebih mahal." },
-  { name: "d*****n", stars: 5, text: "Udah langganan 3 bulan, nggak pernah ada masalah. Panduan aktivasinya jelas banget." },
-  { name: "a*****y", stars: 5, text: "Murah tapi hasil foto premium. Labbet premium via Filtory recommended banget buat konten creator." },
-];
-
-const faqs = [
-  { q: "Ini bukan akun resmi Labbet, apakah aman?", a: "Kami tidak menjual akun resmi, melainkan memberikan panduan akses menggunakan metode aktivasi yang tersedia. Sudah ratusan pembeli dan tidak ada yang bermasalah." },
-  { q: "Proses aktivasinya bagaimana?", a: "Setelah pembayaran dikonfirmasi, kami kirim panduan aktivasi step-by-step via WhatsApp. Prosesnya simpel, bisa selesai dalam 5–10 menit." },
-  { q: "Kalau ganti iPhone atau reset, akses hilang?", a: "Tidak hilang. Kamu tinggal ikuti langkah aktivasi ulang menggunakan panduan yang sudah kami berikan sebelumnya." },
-  { q: "Kenapa harga di website berbeda dengan Shopee?", a: "Di website kamu bayar langsung via QRIS tanpa potongan platform, makanya lebih hemat Rp9.000. Di Shopee sedikit lebih mahal karena ada biaya admin, tapi tersedia proteksi transaksi marketplace." },
-  { q: "Berapa lama akses aktif?", a: "Tergantung paket yang tersedia saat ini. Detail durasi akan dikonfirmasi via WhatsApp setelah pemesanan." },
-];
 ---
 
-<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>Labbet Premium Indonesia — Filtory</title>
-  <meta name="description" content="Akses seluruh fitur premium Labbet untuk edit foto analog tanpa batas. Grain realistis, preset eksklusif, aktivasi instan." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Labbet Premium - Filtory</title>
+  <meta name="description" content="Akses seluruh fitur premium Labbet untuk edit foto analog tanpa batas." />
   
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 </head>
-<body class="bg-[#FAF6F0] text-[#1A1612] font-['Inter',_sans-serif] font-light antialiased overflow-x-hidden selection:bg-[#E8D5A3] selection:text-[#1A1612]">
+<body>
 
-  <div class="fixed inset-0 pointer-events-none z-[9999] opacity-30 mix-blend-overlay grain-bg"></div>
-
-  <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-[#FAF6F0]/85 backdrop-blur-md border-b border-[#1A1612]/10 transition-all">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <a href="/" class="font-['Playfair_Display',_serif] text-xl font-bold tracking-wide text-[#1A1612]">Filtory</a>
-      <a href={WA_LINK} target="_blank" class="bg-[#1A1612] text-[#FAF6F0] text-sm font-medium px-5 py-2.5 rounded-full hover:bg-[#4A443C] transition-colors flex items-center gap-2 shadow-sm">
-        Beli Sekarang <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-      </a>
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="/" class="logo">FILTORY</a>
+      <a href="https://wa.me/62816957050" target="_blank" class="nav-btn">BELI SEKARANG</a>
     </div>
   </nav>
 
-  <header class="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-6 pt-32 pb-20">
-    <div class="inline-flex items-center gap-2 bg-[#F7EDD4] border border-[#E8D5A3] px-4 py-1.5 rounded-full mb-8">
-      <div class="w-1.5 h-1.5 rounded-full bg-[#C9A84C]"></div>
-      <span class="text-[11px] font-medium uppercase tracking-[0.2em] text-[#C9A84C]">Labbet Premium · iOS</span>
-    </div>
-    
-    <h1 class="font-['Playfair_Display',_serif] text-5xl md:text-7xl lg:text-[88px] font-bold leading-[1.05] tracking-tight mb-6 max-w-4xl text-[#1A1612]">
-      Edit foto yang terasa<br /><em class="font-normal italic text-[#8A8078]">seperti kenangan.</em>
-    </h1>
-    
-    <p class="text-lg md:text-xl text-[#4A443C] max-w-xl mx-auto mb-12 leading-relaxed">
-      Akses penuh seluruh fitur premium Labbet. Grain realistis, preset eksklusif, workflow tanpa batas.
-    </p>
-    
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href={WA_LINK} target="_blank" class="flex items-center justify-center gap-3 bg-[#1A1612] text-[#FAF6F0] text-base font-medium px-8 py-4 rounded-full hover:bg-[#4A443C] hover:-translate-y-0.5 transition-all shadow-lg">
-        Beli via WhatsApp
-        <span class="bg-white/20 px-2 py-0.5 rounded-full text-xs">Rp50k</span>
-      </a>
-      <a href={SHOPEE_LINK} target="_blank" class="flex items-center justify-center gap-3 bg-transparent text-[#1A1612] text-base font-normal px-8 py-4 rounded-full border border-[#1A1612]/20 hover:border-[#1A1612] hover:-translate-y-0.5 transition-all">
-        Checkout Shopee
-        <span class="bg-[#1A1612]/5 text-[#8A8078] px-2 py-0.5 rounded-full text-xs">Rp59k</span>
-      </a>
-    </div>
-  </header>
-
-  <section class="border-y border-[#1A1612]/10 bg-[#F5F0E8]">
-    <div class="max-w-5xl mx-auto px-6 py-8 flex flex-wrap justify-center gap-12 md:gap-24">
-      <div class="flex flex-col items-center">
-        <span class="font-['Playfair_Display',_serif] text-3xl font-bold text-[#1A1612]">500+</span>
-        <span class="text-xs text-[#8A8078] uppercase tracking-[0.1em] mt-1">Pelanggan</span>
-      </div>
-      <div class="flex flex-col items-center">
-        <span class="font-['Playfair_Display',_serif] text-3xl font-bold text-[#1A1612]">4.9★</span>
-        <span class="text-xs text-[#8A8078] uppercase tracking-[0.1em] mt-1">Rating Shopee</span>
-      </div>
-      <div class="flex flex-col items-center">
-        <span class="font-['Playfair_Display',_serif] text-3xl font-bold text-[#1A1612]">&lt;10m</span>
-        <span class="text-xs text-[#8A8078] uppercase tracking-[0.1em] mt-1">Aktivasi</span>
-      </div>
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-text">THE EDITING APP FOR PHOTOGRAPHERS WITH AN ANALOG SOUL</h1>
     </div>
   </section>
 
-  <section class="max-w-6xl mx-auto px-6 py-32">
-    <div class="text-center mb-16">
-      <span class="text-[11px] font-medium uppercase tracking-[0.2em] text-[#C9A84C] mb-4 block">Vibe Estetik Instan</span>
-      <h2 class="font-['Playfair_Display',_serif] text-4xl md:text-5xl font-bold text-[#1A1612]">Tone visual yang mahal.</h2>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 bg-white p-4 md:p-8 rounded-[2rem] border border-[#1A1612]/10 shadow-sm">
-      <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-neutral-200 border border-[#1A1612]/10">
-        <img src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?q=80&w=800&auto=format" alt="Before" class="absolute inset-0 w-full h-full object-cover" />
-        <div class="absolute top-4 left-4 bg-white/80 backdrop-blur-sm text-xs font-semibold px-3 py-1.5 rounded-full text-[#1A1612]">Asli</div>
-      </div>
-      <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-neutral-200 border border-[#1A1612]/10 shadow-inner">
-        <img src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?q=80&w=800&sepia=50&auto=format" alt="After" class="absolute inset-0 w-full h-full object-cover contrast-125 saturate-50" />
-        <div class="absolute inset-0 bg-[#F5F0E8]/20 mix-blend-multiply grain-bg"></div>
-        <div class="absolute top-4 right-4 bg-[#C9A84C] text-[#FAF6F0] text-xs font-semibold px-3 py-1.5 rounded-full shadow-md">Labbet Premium</div>
-      </div>
+  <section class="marquee-section">
+    <div class="marquee-track">
+      <span class="marquee-items">
+        <span>500+ TERJUAL</span>
+        <span>4.9 RATING</span>
+        <span>AKSES PENUH</span>
+        <span>TANPA BATAS</span>
+      </span>
+      <span class="marquee-items" aria-hidden="true">
+        <span>500+ TERJUAL</span>
+        <span>4.9 RATING</span>
+        <span>AKSES PENUH</span>
+        <span>TANPA BATAS</span>
+      </span>
     </div>
   </section>
 
-  <section class="max-w-6xl mx-auto px-6 py-20">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      {features.map(f => (
-        <div class="bg-white p-8 rounded-3xl border border-[#1A1612]/5 shadow-sm hover:shadow-md hover:border-[#C9A84C]/30 transition-all group">
-          <span class="text-3xl text-[#C9A84C] block mb-6 transform group-hover:scale-110 transition-transform origin-left">{f.icon}</span>
-          <h3 class="text-base font-semibold text-[#1A1612] mb-3">{f.title}</h3>
-          <p class="text-sm text-[#8A8078] leading-relaxed">{f.desc}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <div class="flex items-center justify-center py-12 px-6 overflow-hidden opacity-50">
-    <div class="w-full h-px bg-[#1A1612]/10"></div>
-    <span class="font-['Playfair_Display',_serif] text-[11px] uppercase tracking-[0.3em] text-[#8A8078] px-6 whitespace-nowrap">Perbandingan</span>
-    <div class="w-full h-px bg-[#1A1612]/10"></div>
-  </div>
-
-  <section class="max-w-4xl mx-auto px-6 py-20">
-    <div class="text-center mb-16">
-      <h2 class="font-['Playfair_Display',_serif] text-4xl md:text-5xl font-bold text-[#1A1612]">Labbet gratis vs<br /><em class="font-normal italic text-[#8A8078]">versi premium.</em></h2>
-    </div>
-    
-    <div class="bg-white rounded-3xl border border-[#1A1612]/10 overflow-hidden shadow-sm">
-      <table class="w-full text-left border-collapse">
-        <thead>
-          <tr class="bg-[#F5F0E8] border-b border-[#1A1612]/10">
-            <th class="py-5 px-6 text-xs font-medium uppercase tracking-wider text-[#8A8078]">Fitur</th>
-            <th class="py-5 px-6 text-center text-xs font-medium uppercase tracking-wider text-[#8A8078]">Gratis</th>
-            <th class="py-5 px-6 text-center text-xs font-bold uppercase tracking-wider bg-[#1A1612] text-[#E8D5A3]">✦ Premium</th>
-          </tr>
-        </thead>
-        <tbody class="text-sm">
-          <tr class="border-b border-[#1A1612]/5 hover:bg-[#F5F0E8]/50">
-            <td class="py-4 px-6 text-[#4A443C]">Preset & Edits eksklusif</td>
-            <td class="py-4 px-6 text-center text-[#8A8078]">Terbatas</td>
-            <td class="py-4 px-6 text-center font-medium text-[#1A1612] bg-[#1A1612]/[0.02]">Semua terbuka</td>
-          </tr>
-          <tr class="border-b border-[#1A1612]/5 hover:bg-[#F5F0E8]/50">
-            <td class="py-4 px-6 text-[#4A443C]">Texture & grain film analog</td>
-            <td class="py-4 px-6 text-center text-[#8A8078]">Tidak ada</td>
-            <td class="py-4 px-6 text-center font-medium text-[#1A1612] bg-[#1A1612]/[0.02]">Penuh</td>
-          </tr>
-          <tr class="border-b border-[#1A1612]/5 hover:bg-[#F5F0E8]/50">
-            <td class="py-4 px-6 text-[#4A443C]">Light leak & dust</td>
-            <td class="py-4 px-6 text-center text-[#8A8078]">Tidak ada</td>
-            <td class="py-4 px-6 text-center font-medium text-[#1A1612] bg-[#1A1612]/[0.02]">Tersedia</td>
-          </tr>
-          <tr class="border-b border-[#1A1612]/5 hover:bg-[#F5F0E8]/50">
-            <td class="py-4 px-6 text-[#4A443C]">Export resolusi tinggi</td>
-            <td class="py-4 px-6 text-center text-[#8A8078]">Dibatasi</td>
-            <td class="py-4 px-6 text-center font-medium text-[#1A1612] bg-[#1A1612]/[0.02]">Tak terbatas</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="max-w-5xl mx-auto px-6 py-20">
-    <div class="text-center mb-16">
-      <span class="text-[11px] font-medium uppercase tracking-[0.2em] text-[#C9A84C] mb-4 block">Dua Cara Pembelian</span>
-      <h2 class="font-['Playfair_Display',_serif] text-4xl md:text-5xl font-bold text-[#1A1612]">Pilih yang paling nyaman.</h2>
+  <section class="pricing-section">
+    <div class="section-header">
+      <h2 class="massive-title">PILIH AKSES</h2>
+      <p class="section-subtitle">Akses premium instan. Pilih metode pembayaran yang paling sesuai untukmu.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-      <div class="bg-[#1A1612] text-[#FAF6F0] rounded-[2rem] p-8 md:p-12 relative overflow-hidden group">
-        <span class="absolute -top-8 -left-4 font-['Playfair_Display',_serif] text-[120px] font-bold text-white/[0.03] pointer-events-none group-hover:text-[#C9A84C]/10 transition-colors">01</span>
-        <div class="relative z-10">
-          <span class="text-[11px] font-medium uppercase tracking-[0.2em] text-[#E8D5A3] block mb-2">Rekomendasi · Hemat Rp9k</span>
-          <h3 class="text-2xl font-medium mb-8">Via WhatsApp + QRIS</h3>
-          <ul class="space-y-3 text-sm text-white/70 mb-12">
-            <li class="flex items-start gap-2"><span class="text-[#C9A84C]">→</span> Klik tombol beli via WhatsApp</li>
-            <li class="flex items-start gap-2"><span class="text-[#C9A84C]">→</span> Kami kirim kode QRIS</li>
-            <li class="flex items-start gap-2"><span class="text-[#C9A84C]">→</span> Bayar via GoPay / Mobile Banking</li>
-            <li class="flex items-start gap-2"><span class="text-[#C9A84C]">→</span> Terima panduan aktivasi instan</li>
-          </ul>
-          <div class="font-['Playfair_Display',_serif] text-4xl font-bold text-[#E8D5A3] mb-6">Rp50.000</div>
-          <a href={WA_LINK} target="_blank" class="block w-full text-center bg-[#FAF6F0] text-[#1A1612] font-medium py-4 rounded-full hover:opacity-90 transition-opacity">
-            Beli via WhatsApp
-          </a>
-        </div>
-      </div>
-
-      <div class="bg-[#F5F0E8] text-[#1A1612] border border-[#1A1612]/10 rounded-[2rem] p-8 md:p-12 relative overflow-hidden group">
-        <span class="absolute -top-8 -left-4 font-['Playfair_Display',_serif] text-[120px] font-bold text-[#1A1612]/[0.03] pointer-events-none transition-colors">02</span>
-        <div class="relative z-10">
-          <span class="text-[11px] font-medium uppercase tracking-[0.2em] text-[#C9A84C] block mb-2">Proteksi Shopee</span>
-          <h3 class="text-2xl font-medium mb-8">Via Shopee Checkout</h3>
-          <ul class="space-y-3 text-sm text-[#4A443C] mb-12">
-            <li class="flex items-start gap-2"><span class="text-[#C9A84C]">→</span> Buka toko Filtory di Shopee</li>
-            <li class="flex items-start gap-2"><span class="text-[#C9A84C]">→</span> Checkout seperti biasa</li>
-            <li class="flex items-start gap-2"><span class="text-[#C9A84C]">→</span> Konfirmasi pesanan diterima</li>
-            <li class="flex items-start gap-2"><span class="text-[#C9A84C]">→</span> Panduan dikirim via Shopee</li>
-          </ul>
-          <div class="font-['Playfair_Display',_serif] text-4xl font-bold text-[#1A1612] mb-6">Rp59.000</div>
-          <a href={SHOPEE_LINK} target="_blank" class="block w-full text-center bg-transparent border border-[#1A1612]/30 text-[#1A1612] font-medium py-4 rounded-full hover:border-[#1A1612] transition-colors">
-            Checkout Shopee
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="max-w-6xl mx-auto px-6 py-20">
-    <div class="text-center mb-16">
-      <span class="text-[11px] font-medium uppercase tracking-[0.2em] text-[#C9A84C] mb-4 block">Testimoni</span>
-      <h2 class="font-['Playfair_Display',_serif] text-4xl md:text-5xl font-bold text-[#1A1612]">Ulasan asli pembeli.</h2>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      {reviews.map(r => (
-        <div class="bg-white p-6 rounded-2xl border border-[#1A1612]/5 shadow-sm">
-          <div class="text-[#C9A84C] text-sm tracking-[2px] mb-3">{'★'.repeat(r.stars)}</div>
-          <p class="text-sm text-[#4A443C] leading-relaxed mb-4">"{r.text}"</p>
-          <div class="flex flex-col">
-            <span class="text-[13px] font-medium text-[#1A1612]">{r.name}</span>
-            <span class="text-[10px] text-[#8A8078] flex items-center gap-1 mt-0.5">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" class="opacity-50"><circle cx="12" cy="12" r="10"/></svg>
-              Pembeli via Shopee
-            </span>
+    <div class="cards-scroll">
+      <div class="product-card">
+        <a href="https://wa.me/62816957050?text=Halo%20Filtory,%20saya%20mau%20beli%20Labbet%20Premium%20via%20QRIS%20(Rp50.000)" target="_blank" class="card-link">
+          <div class="card-image-wrapper bg-dark">
+            <div class="card-gradient"></div>
+            <div class="card-text-container">
+              <h3 class="card-title">WHATSAPP</h3>
+              <p class="card-subtitle">RP 50.000 • VIA QRIS</p>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <section class="max-w-3xl mx-auto px-6 py-20 mb-10">
-    <div class="text-center mb-12">
-      <h2 class="font-['Playfair_Display',_serif] text-3xl md:text-4xl font-bold text-[#1A1612]">Pertanyaan Umum</h2>
-    </div>
-    <div class="space-y-4">
-      {faqs.map(item => (
-        <details class="bg-white rounded-2xl border border-[#1A1612]/10 group [&_summary::-webkit-details-marker]:hidden">
-          <summary class="flex justify-between items-center p-6 cursor-pointer text-base font-medium text-[#1A1612] list-none">
-            {item.q}
-            <span class="text-[#8A8078] text-xl transform transition-transform group-open:rotate-45">+</span>
-          </summary>
-          <div class="px-6 pb-6 pt-0 text-sm text-[#4A443C] leading-relaxed border-t border-[#1A1612]/5 mt-2 pt-4">
-            {item.a}
-          </div>
-        </details>
-      ))}
-    </div>
-  </section>
-
-  <footer class="bg-[#1A1612] text-[#FAF6F0] text-center pt-24 pb-12 px-6 relative overflow-hidden">
-    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 font-['Playfair_Display',_serif] text-[15vw] font-bold text-white/[0.02] whitespace-nowrap pointer-events-none select-none leading-[0.8]">
-      FILTORY
-    </div>
-    
-    <div class="relative z-10 max-w-2xl mx-auto">
-      <span class="text-[11px] font-medium uppercase tracking-[0.2em] text-[#C9A84C] mb-4 block">Mulai Sekarang</span>
-      <h2 class="font-['Playfair_Display',_serif] text-4xl md:text-5xl font-bold mb-12">Foto estetik,<br />langsung dari iPhone.</h2>
-      
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-24">
-        <a href={WA_LINK} target="_blank" class="bg-[#C9A84C] text-[#1A1612] text-sm font-medium px-8 py-4 rounded-full hover:bg-[#E8D5A3] transition-colors">
-          Beli via WhatsApp (Rp50k)
         </a>
-        <a href={SHOPEE_LINK} target="_blank" class="bg-transparent border border-white/20 text-white/80 text-sm font-medium px-8 py-4 rounded-full hover:border-white/50 transition-colors">
-          Checkout Shopee (Rp59k)
-        </a>
+        <a href="https://wa.me/62816957050" target="_blank" class="card-action-btn">ORDER VIA WA</a>
       </div>
-      
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-white/10 text-[11px] text-white/30 uppercase tracking-wider">
-        <p>© 2026 Filtory. Bukan afiliasi resmi Labbet.</p>
-        <a href="/blog" class="hover:text-white/60 transition-colors">Kunjungi Blog</a>
+
+      <div class="product-card">
+        <a href="https://s.shopee.co.id/1gG3IthAYI" target="_blank" class="card-link">
+          <div class="card-image-wrapper bg-light">
+            <div class="card-gradient"></div>
+            <div class="card-text-container">
+              <h3 class="card-title text-black">SHOPEE</h3>
+              <p class="card-subtitle text-black">RP 59.000 • CHECKOUT OTOMATIS</p>
+            </div>
+          </div>
+        </a>
+        <a href="https://s.shopee.co.id/1gG3IthAYI" target="_blank" class="card-action-btn">CHECKOUT SHOPEE</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <div class="quote-container">
+      <p class="quote-text">“This app popped up in my feed, and I was so captivated by the aesthetics that I couldn’t not download it.”</p>
+      <footer class="quote-author">— PEMBELI SHOPEE, MEI 2026</footer>
+    </div>
+  </section>
+
+  <section class="footer-cta-section">
+    <a href="https://wa.me/62816957050" target="_blank" class="footer-cta-link">
+      BELI LABBET<br/>SEKARANG.
+    </a>
+  </section>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-bottom">
+        <p>© 2026 Filtory. All rights reserved.</p>
+        <p class="align-right">Labbet Premium Access • Indonesia</p>
       </div>
     </div>
   </footer>
 
 </body>
-</html>
 
-<style is:global>
-  .grain-bg {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+<style>
+  :root {
+    --black: #000000;
+    --white: #FFFFFF;
+    --border: #E5E5E5;
+    --text-muted: #999999;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Navigation */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+  }
+
+  .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    color: var(--black);
+  }
+
+  .nav-btn {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  /* Hero */
+  .hero-section {
+    margin-top: 56px;
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.2);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 0 32px;
+    width: 80%;
+    max-width: 1000px;
+  }
+
+  .hero-text {
+    color: var(--white);
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+  }
+
+  /* Marquee */
+  .marquee-section {
+    padding: 16px 0;
+    overflow: hidden;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .marquee-track {
+    display: flex;
+    white-space: nowrap;
+    font-size: clamp(3rem, 12vw, 140px);
+    line-height: 0.875;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    width: fit-content;
+    animation: marquee 15s linear infinite;
+  }
+
+  .marquee-items {
+    display: inline-flex;
+    gap: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* Pricing Section */
+  .pricing-section {
+    padding: 32px 0 40px 0;
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .section-header {
+    padding: 0 16px;
+    margin-bottom: 24px;
+  }
+
+  .massive-title {
+    margin: 0;
+    font-size: clamp(3rem, 12vw, 140px);
+    line-height: 0.875;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .section-subtitle {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 16px;
+  }
+
+  .cards-scroll {
+    display: flex;
+    gap: 12px;
+    padding: 0 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .cards-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-card {
+    flex-shrink: 0;
+    width: 85vw;
+    max-width: 500px;
+  }
+
+  .card-link {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .card-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 125%;
+  }
+
+  .bg-dark { background-color: #111; }
+  .bg-light { background-color: #EFEFEF; }
+
+  .card-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    pointer-events: none;
+  }
+
+  .card-text-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+  }
+
+  .card-title {
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0 0 8px 0;
+  }
+
+  .card-subtitle {
+    color: var(--white);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+
+  .text-black { color: var(--black) !important; }
+
+  .card-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    background-color: var(--black);
+    text-decoration: none;
+    border: 1px solid var(--white);
+    margin-top: 8px;
+  }
+
+  /* Testimonial Quote */
+  .quote-section {
+    padding: 80px 24px;
+    background-color: var(--white);
+    color: var(--black);
+  }
+
+  .quote-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.25rem, 7vw, 5rem);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin: 0;
+  }
+
+  .quote-author {
+    margin-top: 32px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+
+  /* Footer CTA */
+  .footer-cta-section {
+    background-color: var(--black);
+    padding: 100px 24px;
+    text-align: center;
+  }
+
+  .footer-cta-link {
+    display: inline-block;
+    color: var(--white);
+    font-size: clamp(3rem, 12vw, 140px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+
+  /* Footer Bottom */
+  .main-footer {
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    background-color: var(--white);
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+
+  @media (min-width: 768px) {
+    .product-card { width: 45vw; }
+    .footer-bottom { 
+      flex-direction: row; 
+      justify-content: space-between;
+    }
+    .align-right { text-align: right; }
   }
 </style>
+</html>
