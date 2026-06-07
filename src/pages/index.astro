@@ -17,8 +17,8 @@ const faqs = [
   { q: "Ini bukan akun resmi Labbet, apakah aman?", a: "Kami tidak menjual akun resmi, melainkan memberikan panduan akses menggunakan metode aktivasi yang tersedia. Sudah ratusan pembeli dan tidak ada yang bermasalah." },
   { q: "Proses aktivasinya bagaimana?", a: "Setelah pembayaran dikonfirmasi, kami kirim panduan aktivasi step-by-step via WhatsApp. Prosesnya simpel, bisa selesai dalam 5–10 menit." },
   { q: "Kalau ganti iPhone atau reset, akses hilang?", a: "Tidak hilang. Kamu tinggal ikuti langkah aktivasi ulang menggunakan panduan yang sudah kami berikan sebelumnya." },
-  { q: "Kenapa harga di website berbeda dengan Shopee?", a: "Di website kamu bayar langsung via QRIS tanpa potongan platform, makanya lebih hemat Rp9.000. Di Shopee sedikit lebih mahal karena ada biaya admin, tapi tersedia proteksi transaksi marketplace." },
-  { q: "Berapa lama akses aktif?", a: "Tergantung paket yang tersedia saat ini. Detail durasi akan dikonfirmasi via WhatsApp setelah pemesanan." },
+  { q: "Kenapa harga di website berbeda dengan Shopee?", a: "Pembelian via website menggunakan metode direct transfer (QRIS) sehingga memotong biaya admin marketplace. Transaksi via Shopee menyesuaikan dengan potongan biaya admin platform, namun memberikan opsi proteksi dari marketplace." },
+  { q: "Berapa lama akses aktif?", a: "Tersedia pilihan masa aktif 6 bulan dan 10 bulan untuk pembelian via WhatsApp. Masa aktif via Shopee mengikuti deskripsi produk di toko." },
 ];
 ---
 
@@ -44,13 +44,15 @@ const faqs = [
 
   <section class="hero-section">
     <div class="hero-container">
-      <p class="hero-label">LABBET PREMIUM · INDONESIA</p>
-      <h1 class="massive-title">EDIT FOTO YANG TERASA SEPERTI KENANGAN.</h1>
+      
+      <img src="/images/logo-labbet.png" alt="Labbet" class="hero-logo" />
+      
+      <h1 class="massive-title">LABBET PREMIUM.</h1>
       <p class="hero-desc">Akses penuh seluruh fitur premium Labbet. Grain realistis, preset eksklusif, workflow tanpa batas.</p>
       
       <div class="cta-group">
-        <a href="https://wa.me/62816957050" target="_blank" class="btn btn-black">BELI VIA WHATSAPP — RP50.000</a>
-        <a href="https://s.shopee.co.id/1gG3IthAYI" target="_blank" class="btn btn-outline">CHECKOUT SHOPEE — RP59.000</a>
+        <a href="https://wa.me/62816957050" target="_blank" class="btn btn-black">BELI VIA WA — MULAI RP39.000</a>
+        <a href="https://s.shopee.co.id/1gG3IthAYI" target="_blank" class="btn btn-outline">CHECKOUT SHOPEE</a>
       </div>
     </div>
   </section>
@@ -154,8 +156,19 @@ const faqs = [
             <li>Bayar via GoPay/DANA/Mobile Banking</li>
             <li>Terima panduan aktivasi instan</li>
           </ul>
-          <div class="step-price">RP50.000</div>
-          <a href="https://wa.me/62816957050" class="btn btn-black w-full">BELI VIA WHATSAPP →</a>
+          
+          <div class="pricing-block">
+            <div class="price-row">
+              <span class="price-dur">6 BULAN</span>
+              <span class="price-val">RP39.000</span>
+            </div>
+            <div class="price-row">
+              <span class="price-dur">10 BULAN</span>
+              <span class="price-val">RP49.000</span>
+            </div>
+          </div>
+
+          <a href="https://wa.me/62816957050" class="btn btn-black w-full mt-auto">BELI VIA WHATSAPP →</a>
         </div>
 
         <div class="step-card bg-light">
@@ -170,8 +183,12 @@ const faqs = [
             <li>Konfirmasi pesanan diterima</li>
             <li>Panduan aktivasi dikirim via Shopee</li>
           </ul>
-          <div class="step-price">RP59.000</div>
-          <a href="https://s.shopee.co.id/1gG3IthAYI" class="btn btn-outline w-full">CHECKOUT SHOPEE →</a>
+
+          <div class="pricing-block flex-center">
+             <span class="shopee-price-text">CEK HARGA DI APLIKASI</span>
+          </div>
+
+          <a href="https://s.shopee.co.id/1gG3IthAYI" class="btn btn-outline w-full mt-auto">CHECKOUT SHOPEE →</a>
         </div>
       </div>
     </div>
@@ -222,8 +239,8 @@ const faqs = [
       <h2 class="massive-title text-white">FOTO YANG TERASA SEPERTI KENANGAN, DI TANGANMU.</h2>
       <p class="footer-cta-desc">Aktivasi dalam 10 menit. Ratusan kreator sudah membuktikannya.</p>
       <div class="cta-group justify-center">
-        <a href="https://wa.me/62816957050" class="btn btn-white">BELI VIA WA — RP50.000</a>
-        <a href="https://s.shopee.co.id/1gG3IthAYI" class="btn btn-outline-white">CHECKOUT SHOPEE — RP59.000</a>
+        <a href="https://wa.me/62816957050" class="btn btn-white">BELI VIA WA — MULAI 39K</a>
+        <a href="https://s.shopee.co.id/1gG3IthAYI" class="btn btn-outline-white">CHECKOUT SHOPEE</a>
       </div>
     </div>
   </section>
@@ -267,6 +284,7 @@ const faqs = [
   .w-full { width: 100%; text-align: center; }
   .justify-center { justify-content: center; }
   .border-bottom { border-bottom: 1px solid var(--border); }
+  .mt-auto { margin-top: auto; }
 
   /* Navigation */
   .navbar {
@@ -292,12 +310,11 @@ const faqs = [
 
   .hero-container { max-width: 1000px; margin: 0 auto; }
   
-  .hero-label {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 24px;
-    color: var(--text-muted);
+  .hero-logo {
+    height: 36px;
+    width: auto;
+    margin: 0 auto 32px auto;
+    display: block;
   }
 
   .massive-title {
@@ -408,9 +425,17 @@ const faqs = [
   .step-num { font-family: 'Playfair Display', serif; font-size: 2rem; }
   .step-badge { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; background: var(--black); color: var(--white); padding: 4px 8px; }
   .step-title { font-size: 1.25rem; margin: 0 0 16px 0; text-transform: uppercase; }
-  .step-list { margin: 0 0 32px 0; padding-left: 20px; color: var(--text-muted); flex-grow: 1; }
+  .step-list { margin: 0 0 32px 0; padding-left: 20px; color: var(--text-muted); }
   .step-list li { margin-bottom: 8px; }
-  .step-price { font-size: 1.5rem; font-weight: 600; text-align: center; margin-bottom: 16px; }
+
+  /* Pricing Block in Cards */
+  .pricing-block { margin-bottom: 32px; border-top: 1px solid var(--border); padding-top: 16px; }
+  .price-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; }
+  .price-val { font-size: 1.5rem; font-weight: 600; }
+  .price-dur { font-size: 0.85rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  
+  .flex-center { display: flex; align-items: center; justify-content: center; height: 100%; min-height: 80px; }
+  .shopee-price-text { font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
 
   /* Reviews */
   .reviews-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
