@@ -1,145 +1,936 @@
 ---
-// Bagian ini adalah frontmatter Astro untuk logika server (kosong untuk sekarang)
+const WA_LINK = "https://wa.me/62816957050?text=Halo%20Filtory%2C%20saya%20mau%20beli%20Labbet%20Premium%20(Rp50.000)";
+const SHOPEE_LINK = "https://s.shopee.co.id/1gG3IthAYI";
+
+const features = [
+  { icon: "✦", title: "Semua Preset & Edits Terbuka", desc: "Scanned, Demar, Luxra, Laurel, Index — seluruh koleksi eksklusif langsung bisa diakses." },
+  { icon: "◈", title: "Grain Film Realistis", desc: "Tekstur film analog yang terasa nyata. Bukan filter digital murahan." },
+  { icon: "◉", title: "Light Leak & Dust", desc: "Efek optical yang membuat foto terasa seperti hasil scan negatif sungguhan." },
+  { icon: "◐", title: "Export Tanpa Batas", desc: "Ekspor foto resolusi penuh kapan saja, sebanyak yang kamu mau." },
+];
+
+const reviews = [
+  { name: "s*****a", stars: 5, text: "Gila responsif banget adminnya, beli jam 12 malam langsung aktif. Preset-nya bagus semua!" },
+  { name: "r*****i", stars: 5, text: "Worth it banget, beda banget hasilnya dari yang gratis. Foto jadi keliatan lebih mahal." },
+  { name: "d*****n", stars: 5, text: "Udah langganan 3 bulan, nggak pernah ada masalah. Panduan aktivasinya jelas banget." },
+  { name: "a*****y", stars: 5, text: "Murah tapi hasil foto premium. Labbet premium via Filtory recommended banget buat konten creator." },
+];
+
+const faqs = [
+  {
+    q: "Ini bukan akun resmi Labbet, apakah aman?",
+    a: "Kami tidak menjual akun resmi, melainkan memberikan panduan akses menggunakan metode aktivasi yang tersedia. Sudah ratusan pembeli dan tidak ada yang bermasalah."
+  },
+  {
+    q: "Proses aktivasinya bagaimana?",
+    a: "Setelah pembayaran dikonfirmasi, kami kirim panduan aktivasi step-by-step via WhatsApp. Prosesnya simpel, bisa selesai dalam 5–10 menit."
+  },
+  {
+    q: "Kalau ganti iPhone atau reset, akses hilang?",
+    a: "Tidak hilang. Kamu tinggal ikuti langkah aktivasi ulang menggunakan panduan yang sudah kami berikan sebelumnya."
+  },
+  {
+    q: "Kenapa harga di website berbeda dengan Shopee?",
+    a: "Di website kamu bayar langsung via QRIS tanpa potongan platform, makanya lebih hemat Rp9.000. Di Shopee sedikit lebih mahal karena ada biaya admin, tapi tersedia proteksi transaksi marketplace."
+  },
+  {
+    q: "Berapa lama akses aktif?",
+    a: "Tergantung paket yang tersedia saat ini. Detail durasi akan dikonfirmasi via WhatsApp setelah pemesanan."
+  },
+];
 ---
 
+<!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Labbet Premium Indonesia - Filtory</title>
-    <meta name="description" content="Akses seluruh fitur premium Labbet untuk edit foto analog tanpa batas." />
-  </head>
-  <body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-yellow-200">
-    
-    <!-- Hero Section -->
-    <header class="max-w-3xl mx-auto px-6 pt-24 pb-16 text-center">
-      <div class="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold mb-6">
-        ✨ Tersedia untuk iOS
-      </div>
-      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">
-        Labbet Premium.<br />Edit Foto Analog Bebas Batas.
-      </h1>
-      <p class="text-lg text-slate-600 mb-10 max-w-xl mx-auto leading-relaxed">
-        Nikmati seluruh fitur premium Labbet untuk hasil foto estetik. Aktivasi instan, panduan lengkap, dan dukungan langsung.
-      </p>
-      
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <!-- CTA WhatsApp -->
-        <a href="https://wa.me/62816957050?text=Halo%20Filtory,%20saya%20mau%20beli%20Labbet%20Premium%20via%20QRIS%20(Rp50.000)" 
-           target="_blank" 
-           class="bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold py-4 px-8 rounded-2xl shadow-sm transition-all text-center">
-          Beli via WhatsApp (Rp50.000)
-        </a>
-        <!-- CTA Shopee -->
-        <a href="https://s.shopee.co.id/1gG3IthAYI" 
-           target="_blank" 
-           class="bg-white hover:bg-slate-100 text-slate-900 border border-slate-300 font-bold py-4 px-8 rounded-2xl shadow-sm transition-all text-center">
-          Checkout Shopee (Rp59.000)
-        </a>
-      </div>
-    </header>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Labbet Premium Indonesia — Filtory</title>
+  <meta name="description" content="Akses seluruh fitur premium Labbet untuk edit foto analog tanpa batas. Grain realistis, preset eksklusif, aktivasi instan. Mulai Rp50.000." />
+  <meta name="keywords" content="labbet premium, beli labbet premium, labbet premium indonesia, labbet premium murah, cara beli labbet premium" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <!-- Social Proof (Dummy Images) -->
-    <section class="max-w-4xl mx-auto px-6 pb-20">
-      <div class="text-center mb-8">
-        <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Dipercaya oleh 500+ Kreator di Shopee</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- Dummy Review 1 -->
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-          <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
-          <p class="text-slate-600 text-sm mb-4">"Proses cepat banget, admin responsif. Labbet langsung bisa dipakai."</p>
-          <div class="flex items-center gap-3">
-            <img src="https://ui-avatars.com/api/?name=A&background=f1f5f9" alt="User" class="w-8 h-8 rounded-full" />
-            <span class="text-xs font-semibold text-slate-800">Pembeli Shopee</span>
-          </div>
-        </div>
-        <!-- Dummy Review 2 -->
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-          <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
-          <p class="text-slate-600 text-sm mb-4">"Panduan aktivasinya jelas, aman buat iPhone. Mantap Filtory!"</p>
-          <div class="flex items-center gap-3">
-            <img src="https://ui-avatars.com/api/?name=B&background=f1f5f9" alt="User" class="w-8 h-8 rounded-full" />
-            <span class="text-xs font-semibold text-slate-800">Pembeli Shopee</span>
-          </div>
-        </div>
-        <!-- Dummy Review 3 -->
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-          <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
-          <p class="text-slate-600 text-sm mb-4">"Lebih murah dari langganan langsung, fiturnya kebuka semua."</p>
-          <div class="flex items-center gap-3">
-            <img src="https://ui-avatars.com/api/?name=C&background=f1f5f9" alt="User" class="w-8 h-8 rounded-full" />
-            <span class="text-xs font-semibold text-slate-800">Pembeli Shopee</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    :root {
+      --cream: #F5F0E8;
+      --warm-white: #FDFAF5;
+      --ink: #1A1612;
+      --ink-light: #4A443C;
+      --ink-muted: #8A8078;
+      --gold: #C9A84C;
+      --gold-light: #E8D5A3;
+      --gold-pale: #F7EDD4;
+      --border: rgba(26,22,18,0.1);
+      --border-strong: rgba(26,22,18,0.2);
+    }
 
-    <!-- Comparison Table -->
-    <section class="max-w-3xl mx-auto px-6 pb-20">
-      <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
-        <div class="px-6 py-8 border-b border-slate-100 text-center">
-          <h2 class="text-2xl font-bold text-slate-900">Kenapa Harus Premium?</h2>
-        </div>
-        <div class="p-6">
-          <table class="w-full text-left border-collapse">
-            <thead>
-              <tr class="text-slate-500 text-sm border-b border-slate-100">
-                <th class="pb-3 font-medium">Fitur</th>
-                <th class="pb-3 font-medium text-center">Labbet Gratis</th>
-                <th class="pb-3 font-medium text-center text-yellow-600">Premium</th>
-              </tr>
-            </thead>
-            <tbody class="text-sm">
-              <tr class="border-b border-slate-50">
-                <td class="py-4 text-slate-800">Akses Preset Premium</td>
-                <td class="py-4 text-center text-slate-400">Terbatas</td>
-                <td class="py-4 text-center font-bold text-slate-900">Semua Terbuka</td>
-              </tr>
-              <tr class="border-b border-slate-50">
-                <td class="py-4 text-slate-800">Tekstur & Grain Eksklusif</td>
-                <td class="py-4 text-center text-slate-400">Tidak Ada</td>
-                <td class="py-4 text-center font-bold text-slate-900">Ya</td>
-              </tr>
-              <tr class="border-b border-slate-50">
-                <td class="py-4 text-slate-800">Workflow Tanpa Batas</td>
-                <td class="py-4 text-center text-slate-400">Tidak</td>
-                <td class="py-4 text-center font-bold text-slate-900">Ya</td>
-              </tr>
-            </tbody>
-          </table>
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--warm-white);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* GRAIN OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.5;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(253,250,245,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--ink);
+      color: var(--warm-white);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      padding: 10px 20px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--ink-light); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+      padding: 8px 16px;
+      border: 1px solid var(--gold-light);
+      border-radius: 100px;
+      background: var(--gold-pale);
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(52px, 8vw, 88px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 12px;
+      max-width: 900px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--ink-muted);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 300;
+      color: var(--ink-light);
+      margin-bottom: 48px;
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--ink);
+      color: var(--warm-white);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 16px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-primary:hover {
+      background: var(--ink-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 400;
+      padding: 16px 32px;
+      border-radius: 100px;
+      border: 1px solid var(--border-strong);
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--ink);
+      transform: translateY(-1px);
+    }
+
+    .price-tag {
+      font-size: 12px;
+      font-weight: 500;
+      background: rgba(255,255,255,0.2);
+      padding: 3px 8px;
+      border-radius: 100px;
+    }
+
+    .price-tag-dark {
+      background: rgba(26,22,18,0.08);
+      color: var(--ink-muted);
+    }
+
+    /* SOCIAL PROOF BAR */
+    .proof-bar {
+      padding: 20px 32px;
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--cream);
+    }
+
+    .proof-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .proof-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .proof-label {
+      font-size: 12px;
+      color: var(--ink-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 96px 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 48px;
+    }
+
+    .section-title em { font-style: italic; color: var(--ink-muted); }
+
+    /* FEATURES GRID */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .feature-card {
+      background: var(--warm-white);
+      padding: 40px 32px;
+      transition: background 0.2s;
+    }
+
+    .feature-card:hover { background: var(--cream); }
+
+    .feature-icon {
+      font-size: 28px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+      line-height: 1;
+    }
+
+    .feature-title {
+      font-weight: 500;
+      font-size: 16px;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .feature-desc {
+      font-size: 14px;
+      color: var(--ink-muted);
+      line-height: 1.6;
+    }
+
+    /* COMPARISON */
+    .comparison-wrapper {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .comparison-table thead th {
+      padding: 20px 24px;
+      text-align: left;
+      background: var(--cream);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--ink-muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-table thead th:last-child {
+      background: var(--ink);
+      color: var(--gold-light);
+    }
+
+    .comparison-table tbody tr:hover td { background: var(--cream); }
+    .comparison-table tbody tr:hover td:last-child { background: rgba(26,22,18,0.9); }
+
+    .comparison-table tbody td {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--ink-light);
+      transition: background 0.15s;
+    }
+
+    .comparison-table tbody td:last-child {
+      background: rgba(26,22,18,0.03);
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .comparison-table tbody tr:last-child td { border-bottom: none; }
+
+    .check { color: #3B7A57; font-size: 16px; }
+    .cross { color: var(--ink-muted); font-size: 16px; }
+
+    /* HOW TO ORDER */
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .step-card {
+      background: var(--cream);
+      border-radius: 20px;
+      padding: 40px 32px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .step-card.featured {
+      background: var(--ink);
+      color: var(--warm-white);
+      border-color: var(--ink);
+    }
+
+    .step-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--border-strong);
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .step-card.featured .step-number {
+      color: rgba(255,255,255,0.12);
+    }
+
+    .step-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .step-card.featured .step-label { color: var(--gold-light); }
+    .step-card:not(.featured) .step-label { color: var(--gold); }
+
+    .step-title {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .step-card.featured .step-title { color: var(--warm-white); }
+
+    .step-list {
+      list-style: none;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .step-list li::before {
+      content: '→ ';
+      color: var(--gold);
+    }
+
+    .step-card.featured .step-list { color: rgba(255,255,255,0.75); }
+    .step-card:not(.featured) .step-list { color: var(--ink-light); }
+
+    .step-price {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 28px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .step-card:not(.featured) .step-price { color: var(--ink); }
+    .step-card.featured .step-price { color: var(--gold-light); }
+
+    .step-btn {
+      display: block;
+      margin-top: 24px;
+      text-align: center;
+      padding: 14px 24px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .step-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .step-btn-primary {
+      background: var(--warm-white);
+      color: var(--ink);
+    }
+
+    .step-btn-secondary {
+      background: var(--ink);
+      color: var(--warm-white);
+    }
+
+    /* REVIEWS */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .review-card {
+      background: var(--cream);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 28px 24px;
+    }
+
+    .review-stars {
+      color: var(--gold);
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .review-text {
+      font-size: 14px;
+      color: var(--ink-light);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .review-name {
+      font-size: 12px;
+      color: var(--ink-muted);
+      font-weight: 500;
+    }
+
+    .shopee-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--ink-muted);
+      margin-top: 2px;
+    }
+
+    /* FAQ */
+    .faq-list { border-top: 1px solid var(--border); }
+
+    details {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    summary {
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ink);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      gap: 16px;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    .summary-icon {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      border: 1px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--ink-muted);
+      transition: transform 0.3s;
+    }
+
+    details[open] .summary-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      margin-top: 16px;
+      font-size: 15px;
+      color: var(--ink-light);
+      line-height: 1.7;
+      max-width: 680px;
+    }
+
+    /* FOOTER CTA */
+    .footer-cta {
+      padding: 96px 24px;
+      text-align: center;
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-cta::before {
+      content: 'FILTORY';
+      position: absolute;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(80px, 15vw, 180px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: rgba(255,255,255,0.03);
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .footer-cta .section-title {
+      color: var(--warm-white);
+      margin-bottom: 16px;
+    }
+
+    .footer-cta .section-title em { color: var(--gold-light); }
+
+    .footer-cta-sub {
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 48px;
+      font-size: 16px;
+    }
+
+    .footer-cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 64px;
+    }
+
+    .footer-cta .btn-primary {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .footer-cta .btn-primary:hover { background: var(--gold-light); }
+
+    .footer-cta .btn-secondary {
+      border-color: rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.7);
+    }
+
+    .footer-cta .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.5);
+      color: var(--warm-white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 32px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .steps { grid-template-columns: 1fr; }
+      .proof-bar { gap: 24px; }
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+    .hero-title { animation: fadeUp 0.6s 0.1s ease both; }
+    .hero-subtitle { animation: fadeUp 0.6s 0.2s ease both; }
+    .hero-ctas { animation: fadeUp 0.6s 0.3s ease both; }
+
+    /* DIVIDER */
+    .divider {
+      text-align: center;
+      overflow: hidden;
+      padding: 0 24px;
+    }
+
+    .divider span {
+      position: relative;
+      display: inline-block;
+      font-family: 'Playfair Display', serif;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      padding: 0 24px;
+    }
+
+    .divider span::before,
+    .divider span::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 100vw;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .divider span::before { right: 100%; }
+    .divider span::after { left: 100%; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Filtory</a>
+  <a href={WA_LINK} target="_blank" class="nav-cta">
+    Beli Sekarang
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-eyebrow">Labbet Premium · Indonesia</span>
+  <h1 class="hero-title">Edit foto yang terasa<br /><em>seperti kenangan.</em></h1>
+  <p class="hero-subtitle">
+    Akses penuh seluruh fitur premium Labbet. Grain realistis, preset eksklusif, workflow tanpa batas.
+  </p>
+  <div class="hero-ctas">
+    <a href={WA_LINK} target="_blank" class="btn-primary">
+      Beli via WhatsApp
+      <span class="price-tag">Rp50.000</span>
+    </a>
+    <a href={SHOPEE_LINK} target="_blank" class="btn-secondary">
+      Checkout Shopee
+      <span class="price-tag-dark">Rp59.000</span>
+    </a>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="proof-bar">
+  <div class="proof-item">
+    <span class="proof-number">500+</span>
+    <span class="proof-label">Pelanggan</span>
+  </div>
+  <div class="proof-item">
+    <span class="proof-number">4.9★</span>
+    <span class="proof-label">Rating Shopee</span>
+  </div>
+  <div class="proof-item">
+    <span class="proof-number">iOS</span>
+    <span class="proof-label">Platform</span>
+  </div>
+  <div class="proof-item">
+    <span class="proof-number">&lt;10 mnt</span>
+    <span class="proof-label">Aktivasi</span>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section>
+  <p class="section-label">Apa yang kamu dapat</p>
+  <h2 class="section-title">Semua tools untuk foto<br /><em>yang terasa mahal.</em></h2>
+  <div class="features-grid">
+    {features.map(f => (
+      <div class="feature-card">
+        <span class="feature-icon">{f.icon}</span>
+        <div class="feature-title">{f.title}</div>
+        <div class="feature-desc">{f.desc}</div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<div class="divider"><span>Perbandingan</span></div>
+
+<!-- COMPARISON -->
+<section>
+  <p class="section-label">Labbet gratis vs premium</p>
+  <h2 class="section-title">Seberapa beda<br /><em>versi premium?</em></h2>
+  <div class="comparison-wrapper">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Fitur</th>
+          <th>Gratis</th>
+          <th>✦ Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Preset & Edits eksklusif</td>
+          <td><span class="cross">Terbatas</span></td>
+          <td><span class="check">Semua terbuka</span></td>
+        </tr>
+        <tr>
+          <td>Texture & grain film analog</td>
+          <td><span class="cross">Tidak ada</span></td>
+          <td><span class="check">Penuh</span></td>
+        </tr>
+        <tr>
+          <td>Light leak & dust</td>
+          <td><span class="cross">Tidak ada</span></td>
+          <td><span class="check">Tersedia</span></td>
+        </tr>
+        <tr>
+          <td>Export resolusi tinggi</td>
+          <td><span class="cross">Dibatasi</span></td>
+          <td><span class="check">Tak terbatas</span></td>
+        </tr>
+        <tr>
+          <td>Border film & negative</td>
+          <td><span class="cross">Terbatas</span></td>
+          <td><span class="check">Semua tersedia</span></td>
+        </tr>
+        <tr>
+          <td>Labbet Link preset sharing</td>
+          <td><span class="cross">Tidak</span></td>
+          <td><span class="check">Ya</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"><span>Cara pesan</span></div>
+
+<!-- HOW TO ORDER -->
+<section>
+  <p class="section-label">Dua cara pembelian</p>
+  <h2 class="section-title">Pilih yang paling<br /><em>nyaman buatmu.</em></h2>
+  <div class="steps">
+    <!-- WhatsApp -->
+    <div class="step-card featured">
+      <div class="step-number">01</div>
+      <div class="step-label">Rekomendasi · Lebih hemat</div>
+      <div class="step-title">Via WhatsApp + QRIS</div>
+      <ul class="step-list">
+        <li>Klik tombol "Beli via WhatsApp"</li>
+        <li>Kami kirim kode QRIS</li>
+        <li>Bayar via GoPay/DANA/Mobile Banking</li>
+        <li>Terima panduan aktivasi instan</li>
+      </ul>
+      <div class="step-price">Rp50.000</div>
+      <a href={WA_LINK} target="_blank" class="step-btn step-btn-primary">
+        Beli via WhatsApp →
+      </a>
+    </div>
+
+    <!-- Shopee -->
+    <div class="step-card">
+      <div class="step-number">02</div>
+      <div class="step-label">Dengan proteksi Shopee</div>
+      <div class="step-title">Via Shopee Checkout</div>
+      <ul class="step-list">
+        <li>Buka toko Filtory di Shopee</li>
+        <li>Checkout seperti biasa</li>
+        <li>Konfirmasi pesanan diterima</li>
+        <li>Panduan aktivasi dikirim via Shopee</li>
+      </ul>
+      <div class="step-price">Rp59.000</div>
+      <a href={SHOPEE_LINK} target="_blank" class="step-btn step-btn-secondary">
+        Checkout Shopee →
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span>Ulasan</span></div>
+
+<!-- REVIEWS -->
+<section>
+  <p class="section-label">Dari pembeli kami</p>
+  <h2 class="section-title">Apa kata mereka<br /><em>setelah pakai.</em></h2>
+  <div class="reviews-grid">
+    {reviews.map(r => (
+      <div class="review-card">
+        <div class="review-stars">{'★'.repeat(r.stars)}</div>
+        <p class="review-text">"{r.text}"</p>
+        <div class="review-name">{r.name}</div>
+        <div class="shopee-badge">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" opacity="0.5"><circle cx="12" cy="12" r="10"/></svg>
+          Pembeli via Shopee
         </div>
       </div>
-    </section>
+    ))}
+  </div>
+</section>
 
-    <!-- FAQ Section -->
-    <section class="max-w-2xl mx-auto px-6 pb-24">
-      <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">Pertanyaan Umum</h2>
-      <div class="space-y-4">
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-          <h3 class="font-bold text-slate-900 mb-2">Bagaimana cara aktivasinya?</h3>
-          <p class="text-sm text-slate-600">Setelah pembayaran, kami akan mengirimkan panduan aktivasi berupa langkah-langkah login menggunakan akun yang sudah berlangganan Premium.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-          <h3 class="font-bold text-slate-900 mb-2">Berapa lama prosesnya?</h3>
-          <p class="text-sm text-slate-600">Normalnya memakan waktu 5-10 menit setelah konfirmasi pembayaran diterima via WhatsApp.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-          <h3 class="font-bold text-slate-900 mb-2">Apakah aplikasi saya akan terhapus jika HP di-reset?</h3>
-          <p class="text-sm text-slate-600">Akses akan tetap ada. Kamu cukup mengikuti panduan aktivasi ulang yang sudah kami berikan sebelumnya.</p>
-        </div>
-      </div>
-    </section>
+<div class="divider"><span>FAQ</span></div>
 
-    <!-- Footer CTA -->
-    <footer class="bg-slate-900 text-white py-16 px-6 text-center">
-      <h2 class="text-2xl font-bold mb-6">Siap Menggunakan Labbet Premium?</h2>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-        <a href="https://wa.me/62816957050?text=Halo%20Filtory,%20saya%20mau%20beli%20Labbet%20Premium%20via%20QRIS%20(Rp50.000)" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold py-4 px-8 rounded-2xl transition-all">Beli via WhatsApp (Rp50k)</a>
-        <a href="https://s.shopee.co.id/1gG3IthAYI" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-bold py-4 px-8 rounded-2xl transition-all">Checkout Shopee (Rp59k)</a>
-      </div>
-      <p class="text-slate-500 text-sm">© 2026 Filtory. All rights reserved.</p>
-    </footer>
+<!-- FAQ -->
+<section>
+  <p class="section-label">Pertanyaan umum</p>
+  <h2 class="section-title">Sebelum kamu<br /><em>bertanya.</em></h2>
+  <div class="faq-list">
+    {faqs.map(item => (
+      <details>
+        <summary>
+          {item.q}
+          <span class="summary-icon">+</span>
+        </summary>
+        <p class="faq-answer">{item.a}</p>
+      </details>
+    ))}
+  </div>
+</section>
 
-  </body>
+<!-- FOOTER CTA -->
+<footer class="footer-cta">
+  <p class="section-label" style="color: var(--gold);">Mulai sekarang</p>
+  <h2 class="section-title">Foto yang terasa seperti<br /><em>kenangan, di tanganmu.</em></h2>
+  <p class="footer-cta-sub">Aktivasi dalam 10 menit. Ratusan kreator sudah membuktikannya.</p>
+  <div class="footer-cta-buttons">
+    <a href={WA_LINK} target="_blank" class="btn-primary">
+      Beli via WhatsApp
+      <span class="price-tag" style="background:rgba(26,22,18,0.15); color:var(--ink);">Rp50.000</span>
+    </a>
+    <a href={SHOPEE_LINK} target="_blank" class="btn-secondary">
+      Checkout Shopee
+      <span style="font-size:13px; opacity:0.6;">Rp59.000</span>
+    </a>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Filtory. Bukan afiliasi resmi Labbet.
+    <a href="/blog" style="color:rgba(255,255,255,0.3); text-decoration:none; margin-left:16px;">Blog</a>
+  </div>
+</footer>
+
+</body>
 </html>
