@@ -1,4 +1,25 @@
 ---
+const features = [
+  { icon: "◈", title: "Preset Eksklusif", desc: "Luxra, Laurel, Index — seluruh koleksi eksklusif langsung bisa diakses." },
+  { icon: "◉", title: "Grain Film Realistis", desc: "Tekstur film analog yang terasa nyata. Bukan filter digital murahan." },
+  { icon: "◐", title: "Light Leak & Dust", desc: "Efek optical yang membuat foto terasa seperti hasil scan negatif sungguhan." },
+  { icon: "❖", title: "Export Tanpa Batas", desc: "Ekspor foto resolusi penuh kapan saja, sebanyak yang kamu mau." },
+];
+
+const reviews = [
+  { name: "s*****a", stars: 5, text: "Gila responsif banget adminnya, beli jam 12 malam langsung aktif. Preset-nya bagus semua!" },
+  { name: "r*****i", stars: 5, text: "Worth it banget, beda banget hasilnya dari yang gratis. Foto jadi keliatan lebih mahal." },
+  { name: "d*****n", stars: 5, text: "Udah langganan 3 bulan, nggak pernah ada masalah. Panduan aktivasinya jelas banget." },
+  { name: "a*****y", stars: 5, text: "Murah tapi hasil foto premium. Labbet premium via Filtory recommended banget buat konten creator." },
+];
+
+const faqs = [
+  { q: "Ini bukan akun resmi Labbet, apakah aman?", a: "Kami tidak menjual akun resmi, melainkan memberikan panduan akses menggunakan metode aktivasi yang tersedia. Sudah ratusan pembeli dan tidak ada yang bermasalah." },
+  { q: "Proses aktivasinya bagaimana?", a: "Setelah pembayaran dikonfirmasi, kami kirim panduan aktivasi step-by-step via WhatsApp. Prosesnya simpel, bisa selesai dalam 5–10 menit." },
+  { q: "Kalau ganti iPhone atau reset, akses hilang?", a: "Tidak hilang. Kamu tinggal ikuti langkah aktivasi ulang menggunakan panduan yang sudah kami berikan sebelumnya." },
+  { q: "Kenapa harga di website berbeda dengan Shopee?", a: "Di website kamu bayar langsung via QRIS tanpa potongan platform, makanya lebih hemat Rp9.000. Di Shopee sedikit lebih mahal karena ada biaya admin, tapi tersedia proteksi transaksi marketplace." },
+  { q: "Berapa lama akses aktif?", a: "Tergantung paket yang tersedia saat ini. Detail durasi akan dikonfirmasi via WhatsApp setelah pemesanan." },
+];
 ---
 
 <html lang="id">
@@ -6,11 +27,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Labbet Premium - Filtory</title>
-  <meta name="description" content="Akses seluruh fitur premium Labbet untuk edit foto analog tanpa batas." />
+  <meta name="description" content="Edit foto yang terasa seperti kenangan dengan Labbet Premium." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -22,83 +43,195 @@
   </nav>
 
   <section class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 class="hero-text">THE EDITING APP FOR PHOTOGRAPHERS WITH AN ANALOG SOUL</h1>
-    </div>
-  </section>
-
-  <section class="marquee-section">
-    <div class="marquee-track">
-      <span class="marquee-items">
-        <span>500+ TERJUAL</span>
-        <span>4.9 RATING</span>
-        <span>AKSES PENUH</span>
-        <span>TANPA BATAS</span>
-      </span>
-      <span class="marquee-items" aria-hidden="true">
-        <span>500+ TERJUAL</span>
-        <span>4.9 RATING</span>
-        <span>AKSES PENUH</span>
-        <span>TANPA BATAS</span>
-      </span>
-    </div>
-  </section>
-
-  <section class="pricing-section">
-    <div class="section-header">
-      <h2 class="massive-title">PILIH AKSES</h2>
-      <p class="section-subtitle">Akses premium instan. Pilih metode pembayaran yang paling sesuai untukmu.</p>
-    </div>
-
-    <div class="cards-scroll">
-      <div class="product-card">
-        <a href="https://wa.me/62816957050?text=Halo%20Filtory,%20saya%20mau%20beli%20Labbet%20Premium%20via%20QRIS%20(Rp50.000)" target="_blank" class="card-link">
-          <div class="card-image-wrapper bg-dark">
-            <div class="card-gradient"></div>
-            <div class="card-text-container">
-              <h3 class="card-title">WHATSAPP</h3>
-              <p class="card-subtitle">RP 50.000 • VIA QRIS</p>
-            </div>
-          </div>
-        </a>
-        <a href="https://wa.me/62816957050" target="_blank" class="card-action-btn">ORDER VIA WA</a>
-      </div>
-
-      <div class="product-card">
-        <a href="https://s.shopee.co.id/1gG3IthAYI" target="_blank" class="card-link">
-          <div class="card-image-wrapper bg-light">
-            <div class="card-gradient"></div>
-            <div class="card-text-container">
-              <h3 class="card-title text-black">SHOPEE</h3>
-              <p class="card-subtitle text-black">RP 59.000 • CHECKOUT OTOMATIS</p>
-            </div>
-          </div>
-        </a>
-        <a href="https://s.shopee.co.id/1gG3IthAYI" target="_blank" class="card-action-btn">CHECKOUT SHOPEE</a>
+    <div class="hero-container">
+      <p class="hero-label">LABBET PREMIUM · INDONESIA</p>
+      <h1 class="massive-title">EDIT FOTO YANG TERASA SEPERTI KENANGAN.</h1>
+      <p class="hero-desc">Akses penuh seluruh fitur premium Labbet. Grain realistis, preset eksklusif, workflow tanpa batas.</p>
+      
+      <div class="cta-group">
+        <a href="https://wa.me/62816957050" target="_blank" class="btn btn-black">BELI VIA WHATSAPP — RP50.000</a>
+        <a href="https://s.shopee.co.id/1gG3IthAYI" target="_blank" class="btn btn-outline">CHECKOUT SHOPEE — RP59.000</a>
       </div>
     </div>
   </section>
 
-  <section class="quote-section">
-    <div class="quote-container">
-      <p class="quote-text">“This app popped up in my feed, and I was so captivated by the aesthetics that I couldn’t not download it.”</p>
-      <footer class="quote-author">— PEMBELI SHOPEE, MEI 2026</footer>
+  <section class="stats-section">
+    <div class="stat-item">
+      <span class="stat-value">500+</span>
+      <span class="stat-label">Pelanggan</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">4.9★</span>
+      <span class="stat-label">Rating Shopee</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">iOS</span>
+      <span class="stat-label">Platform</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">&lt;10 MNT</span>
+      <span class="stat-label">Aktivasi</span>
     </div>
   </section>
 
-  <section class="footer-cta-section">
-    <a href="https://wa.me/62816957050" target="_blank" class="footer-cta-link">
-      BELI LABBET<br/>SEKARANG.
-    </a>
+  <section class="content-section border-bottom">
+    <div class="section-grid">
+      <div class="section-title-col">
+        <p class="label-text">APA YANG KAMU DAPAT</p>
+        <h2 class="large-heading">SEMUA TOOLS UNTUK FOTO YANG TERASA MAHAL.</h2>
+      </div>
+      <div class="section-content-col features-grid">
+        {features.map((f) => (
+          <div class="feature-card">
+            <div class="feature-icon">{f.icon}</div>
+            <h3 class="feature-title">{f.title}</h3>
+            <p class="feature-desc">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section border-bottom">
+    <div class="section-grid">
+      <div class="section-title-col">
+        <p class="label-text">PERBANDINGAN</p>
+        <h2 class="large-heading">SEBERAPA BEDA VERSI PREMIUM?</h2>
+      </div>
+      <div class="section-content-col">
+        <div class="comparison-table">
+          <div class="table-row table-head">
+            <div class="col-feature">Fitur</div>
+            <div class="col-free">Gratis</div>
+            <div class="col-premium">✦ Premium</div>
+          </div>
+          <div class="table-row">
+            <div class="col-feature">Preset & Edits eksklusif</div>
+            <div class="col-free text-muted">Terbatas</div>
+            <div class="col-premium font-bold">Semua terbuka</div>
+          </div>
+          <div class="table-row">
+            <div class="col-feature">Texture & grain film analog</div>
+            <div class="col-free text-muted">Tidak ada</div>
+            <div class="col-premium font-bold">Penuh</div>
+          </div>
+          <div class="table-row">
+            <div class="col-feature">Light leak & dust</div>
+            <div class="col-free text-muted">Tidak ada</div>
+            <div class="col-premium font-bold">Tersedia</div>
+          </div>
+          <div class="table-row">
+            <div class="col-feature">Export resolusi tinggi</div>
+            <div class="col-free text-muted">Dibatasi</div>
+            <div class="col-premium font-bold">Tak terbatas</div>
+          </div>
+          <div class="table-row">
+            <div class="col-feature">Border film & negative</div>
+            <div class="col-free text-muted">Terbatas</div>
+            <div class="col-premium font-bold">Semua tersedia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section border-bottom">
+    <div class="section-grid">
+      <div class="section-title-col">
+        <p class="label-text">CARA PESAN</p>
+        <h2 class="large-heading">PILIH YANG PALING NYAMAN BUATMU.</h2>
+      </div>
+      <div class="section-content-col steps-grid">
+        <div class="step-card bg-light">
+          <div class="step-header">
+            <span class="step-num">01</span>
+            <span class="step-badge">Lebih hemat</span>
+          </div>
+          <h3 class="step-title">VIA WHATSAPP + QRIS</h3>
+          <ul class="step-list">
+            <li>Klik tombol "Beli via WhatsApp"</li>
+            <li>Kami kirim kode QRIS</li>
+            <li>Bayar via GoPay/DANA/Mobile Banking</li>
+            <li>Terima panduan aktivasi instan</li>
+          </ul>
+          <div class="step-price">RP50.000</div>
+          <a href="https://wa.me/62816957050" class="btn btn-black w-full">BELI VIA WHATSAPP →</a>
+        </div>
+
+        <div class="step-card bg-light">
+          <div class="step-header">
+            <span class="step-num">02</span>
+            <span class="step-badge">Proteksi Shopee</span>
+          </div>
+          <h3 class="step-title">VIA SHOPEE CHECKOUT</h3>
+          <ul class="step-list">
+            <li>Buka toko Filtory di Shopee</li>
+            <li>Checkout seperti biasa</li>
+            <li>Konfirmasi pesanan diterima</li>
+            <li>Panduan aktivasi dikirim via Shopee</li>
+          </ul>
+          <div class="step-price">RP59.000</div>
+          <a href="https://s.shopee.co.id/1gG3IthAYI" class="btn btn-outline w-full">CHECKOUT SHOPEE →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section border-bottom">
+    <div class="section-grid">
+      <div class="section-title-col">
+        <p class="label-text">DARI PEMBELI KAMI</p>
+        <h2 class="large-heading">APA KATA MEREKA SETELAH PAKAI.</h2>
+      </div>
+      <div class="section-content-col reviews-grid">
+        {reviews.map((r) => (
+          <div class="review-card">
+            <div class="review-stars">{'★'.repeat(r.stars)}</div>
+            <p class="review-text">"{r.text}"</p>
+            <div class="review-author">
+              <span class="author-name">{r.name}</span>
+              <span class="author-source">Pembeli via Shopee</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-grid">
+      <div class="section-title-col">
+        <p class="label-text">PERTANYAAN UMUM</p>
+        <h2 class="large-heading">SEBELUM KAMU BERTANYA.</h2>
+      </div>
+      <div class="section-content-col">
+        <div class="faq-list">
+          {faqs.map((item) => (
+            <div class="faq-item">
+              <h3 class="faq-q">{item.q}</h3>
+              <p class="faq-a">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-cta-section bg-black text-white">
+    <div class="footer-cta-content">
+      <h2 class="massive-title text-white">FOTO YANG TERASA SEPERTI KENANGAN, DI TANGANMU.</h2>
+      <p class="footer-cta-desc">Aktivasi dalam 10 menit. Ratusan kreator sudah membuktikannya.</p>
+      <div class="cta-group justify-center">
+        <a href="https://wa.me/62816957050" class="btn btn-white">BELI VIA WA — RP50.000</a>
+        <a href="https://s.shopee.co.id/1gG3IthAYI" class="btn btn-outline-white">CHECKOUT SHOPEE — RP59.000</a>
+      </div>
+    </div>
   </section>
 
   <footer class="main-footer">
-    <div class="footer-content">
-      <div class="footer-bottom">
-        <p>© 2026 Filtory. All rights reserved.</p>
-        <p class="align-right">Labbet Premium Access • Indonesia</p>
-      </div>
+    <div class="footer-bottom">
+      <p>© 2026 Filtory. All rights reserved.</p>
+      <p class="align-right">Labbet Premium Access • Indonesia</p>
     </div>
   </footer>
 
@@ -108,9 +241,12 @@
   :root {
     --black: #000000;
     --white: #FFFFFF;
+    --light: #F5F5F5;
     --border: #E5E5E5;
-    --text-muted: #999999;
+    --text-muted: #737373;
   }
+
+  * { box-sizing: border-box; }
 
   body {
     margin: 0;
@@ -119,297 +255,200 @@
     background-color: var(--white);
     color: var(--black);
     -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
   }
+
+  /* Utility Classes */
+  .bg-black { background-color: var(--black); }
+  .bg-light { background-color: var(--light); }
+  .text-white { color: var(--white) !important; }
+  .text-muted { color: var(--text-muted); }
+  .font-bold { font-weight: 600; }
+  .w-full { width: 100%; text-align: center; }
+  .justify-center { justify-content: center; }
+  .border-bottom { border-bottom: 1px solid var(--border); }
 
   /* Navigation */
   .navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     z-index: 50;
     background-color: var(--white);
     border-bottom: 1px solid var(--border);
-    padding: 12px 24px;
+    padding: 16px 24px;
   }
 
-  .nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    text-decoration: none;
-    color: var(--black);
-  }
-
-  .nav-btn {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    background-color: var(--black);
-    color: var(--white);
-    padding: 8px 16px;
-    text-decoration: none;
-  }
+  .nav-content { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+  .nav-btn { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; background-color: var(--black); color: var(--white); padding: 10px 20px; text-decoration: none; }
 
   /* Hero */
   .hero-section {
-    margin-top: 56px;
-    position: relative;
-    width: 100%;
-    height: 90vh;
-    background-color: var(--black);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.2);
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 10;
-    padding: 0 32px;
-    width: 80%;
-    max-width: 1000px;
-  }
-
-  .hero-text {
-    color: var(--white);
-    font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-    font-weight: 500;
-    text-transform: uppercase;
+    margin-top: 60px;
+    padding: 100px 24px;
     text-align: center;
-    margin: 0;
-  }
-
-  /* Marquee */
-  .marquee-section {
-    padding: 16px 0;
-    overflow: hidden;
-    background-color: var(--white);
     border-bottom: 1px solid var(--border);
   }
 
-  .marquee-track {
-    display: flex;
-    white-space: nowrap;
-    font-size: clamp(3rem, 12vw, 140px);
-    line-height: 0.875;
-    letter-spacing: -0.02em;
-    font-weight: 400;
-    width: fit-content;
-    animation: marquee 15s linear infinite;
-  }
-
-  .marquee-items {
-    display: inline-flex;
-    gap: 0.5em;
-    padding-right: 0.5em;
-  }
-
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  /* Pricing Section */
-  .pricing-section {
-    padding: 32px 0 40px 0;
-    background-color: var(--black);
-    color: var(--white);
-  }
-
-  .section-header {
-    padding: 0 16px;
+  .hero-container { max-width: 1000px; margin: 0 auto; }
+  
+  .hero-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     margin-bottom: 24px;
+    color: var(--text-muted);
   }
 
   .massive-title {
-    margin: 0;
-    font-size: clamp(3rem, 12vw, 140px);
-    line-height: 0.875;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 10vw, 7rem);
+    line-height: 0.9;
     letter-spacing: -0.02em;
     font-weight: 400;
     text-transform: uppercase;
+    margin: 0 0 32px 0;
   }
 
-  .section-subtitle {
+  .hero-desc {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 48px auto;
+  }
+
+  /* Buttons */
+  .cta-group { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  
+  .btn {
+    display: inline-block;
+    padding: 16px 32px;
     font-size: 0.75rem;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-top: 16px;
-  }
-
-  .cards-scroll {
-    display: flex;
-    gap: 12px;
-    padding: 0 16px;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  .cards-scroll::-webkit-scrollbar {
-    display: none;
-  }
-
-  .product-card {
-    flex-shrink: 0;
-    width: 85vw;
-    max-width: 500px;
-  }
-
-  .card-link {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
-
-  .card-image-wrapper {
-    position: relative;
-    width: 100%;
-    padding-bottom: 125%;
-  }
-
-  .bg-dark { background-color: #111; }
-  .bg-light { background-color: #EFEFEF; }
-
-  .card-gradient {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 50%;
-    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
-    pointer-events: none;
-  }
-
-  .card-text-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 24px;
-  }
-
-  .card-title {
-    color: var(--white);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    font-weight: 400;
-    text-transform: uppercase;
-    line-height: 1;
-    margin: 0 0 8px 0;
-  }
-
-  .card-subtitle {
-    color: var(--white);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin: 0;
-  }
-
-  .text-black { color: var(--black) !important; }
-
-  .card-action-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 0;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--white);
-    background-color: var(--black);
     text-decoration: none;
-    border: 1px solid var(--white);
-    margin-top: 8px;
+    transition: all 0.2s;
   }
 
-  /* Testimonial Quote */
-  .quote-section {
-    padding: 80px 24px;
-    background-color: var(--white);
-    color: var(--black);
+  .btn-black { background-color: var(--black); color: var(--white); }
+  .btn-outline { background-color: transparent; color: var(--black); border: 1px solid var(--black); }
+  .btn-white { background-color: var(--white); color: var(--black); }
+  .btn-outline-white { background-color: transparent; color: var(--white); border: 1px solid var(--white); }
+  
+  .btn:hover { opacity: 0.8; }
+
+  /* Stats Section */
+  .stats-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid var(--black);
   }
 
-  .quote-container {
-    max-width: 900px;
-    margin: 0 auto;
+  .stat-item {
+    padding: 32px 24px;
     text-align: center;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
 
-  .quote-text {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.25rem, 7vw, 5rem);
-    line-height: 1.15;
-    letter-spacing: -0.025em;
-    margin: 0;
+  .stat-value {
+    display: block;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 8px;
   }
 
-  .quote-author {
-    margin-top: 32px;
-    font-size: 12px;
+  .stat-label {
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--text-muted);
   }
+
+  /* Universal Content Layout */
+  .content-section { padding: 80px 24px; }
+  .section-grid { display: grid; grid-template-columns: 1fr; gap: 48px; max-width: 1200px; margin: 0 auto; }
+  
+  .label-text {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin: 0 0 16px 0;
+  }
+
+  .large-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  /* Features Grid */
+  .features-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+  .feature-icon { font-size: 2rem; margin-bottom: 16px; }
+  .feature-title { font-size: 1.25rem; font-weight: 600; text-transform: uppercase; margin: 0 0 8px 0; }
+  .feature-desc { color: var(--text-muted); margin: 0; }
+
+  /* Comparison Table */
+  .comparison-table { width: 100%; border-top: 2px solid var(--black); }
+  .table-row { display: grid; grid-template-columns: 2fr 1fr 1fr; padding: 20px 0; border-bottom: 1px solid var(--border); }
+  .table-head { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); border-bottom: 2px solid var(--black); }
+
+  /* Steps Grid */
+  .steps-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  .step-card { padding: 32px; border: 1px solid var(--border); display: flex; flex-direction: column; }
+  .step-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .step-num { font-family: 'Playfair Display', serif; font-size: 2rem; }
+  .step-badge { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; background: var(--black); color: var(--white); padding: 4px 8px; }
+  .step-title { font-size: 1.25rem; margin: 0 0 16px 0; text-transform: uppercase; }
+  .step-list { margin: 0 0 32px 0; padding-left: 20px; color: var(--text-muted); flex-grow: 1; }
+  .step-list li { margin-bottom: 8px; }
+  .step-price { font-size: 1.5rem; font-weight: 600; text-align: center; margin-bottom: 16px; }
+
+  /* Reviews */
+  .reviews-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  .review-card { padding: 32px; border: 1px solid var(--border); }
+  .review-stars { font-size: 1.25rem; letter-spacing: 0.1em; margin-bottom: 16px; }
+  .review-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; line-height: 1.3; margin: 0 0 24px 0; }
+  .review-author { display: flex; flex-direction: column; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .author-source { color: var(--text-muted); margin-top: 4px; }
+
+  /* FAQ */
+  .faq-list { border-top: 2px solid var(--black); }
+  .faq-item { padding: 32px 0; border-bottom: 1px solid var(--border); }
+  .faq-q { font-size: 1.25rem; font-weight: 600; margin: 0 0 12px 0; }
+  .faq-a { color: var(--text-muted); margin: 0; }
 
   /* Footer CTA */
-  .footer-cta-section {
-    background-color: var(--black);
-    padding: 100px 24px;
-    text-align: center;
-  }
-
-  .footer-cta-link {
-    display: inline-block;
-    color: var(--white);
-    font-size: clamp(3rem, 12vw, 140px);
-    line-height: 1;
-    letter-spacing: -0.02em;
-    font-weight: 400;
-    text-transform: uppercase;
-    text-decoration: underline;
-  }
+  .footer-cta-section { padding: 120px 24px; text-align: center; }
+  .footer-cta-content { max-width: 900px; margin: 0 auto; }
+  .footer-cta-desc { color: #A3A3A3; margin: 0 auto 48px auto; font-size: 1.25rem; }
 
   /* Footer Bottom */
-  .main-footer {
-    border-top: 1px solid var(--border);
-    padding: 24px;
-    background-color: var(--white);
-  }
+  .main-footer { padding: 24px; border-top: 1px solid var(--border); }
+  .footer-bottom { display: flex; flex-direction: column; gap: 8px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
 
-  .footer-bottom {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-muted);
-  }
-
+  /* Desktop Adjustments */
   @media (min-width: 768px) {
-    .product-card { width: 45vw; }
-    .footer-bottom { 
-      flex-direction: row; 
-      justify-content: space-between;
-    }
+    .stats-section { grid-template-columns: repeat(4, 1fr); border-bottom: none; }
+    .stat-item { border-bottom: none; border-top: 1px solid var(--black); border-bottom: 1px solid var(--black); }
+    .stat-item:last-child { border-right: none; }
+    
+    .section-grid { grid-template-columns: 1fr 2fr; }
+    .section-title-col { position: sticky; top: 100px; align-self: start; }
+    
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+    
+    .footer-bottom { flex-direction: row; justify-content: space-between; }
     .align-right { text-align: right; }
   }
 </style>
