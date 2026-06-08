@@ -7,18 +7,18 @@ const features = [
 ];
 
 const reviews = [
-  { name: "s*****a", stars: 5, text: "Gila responsif banget adminnya, beli jam 12 malam langsung aktif. Preset-nya bagus semua!" },
-  { name: "r*****i", stars: 5, text: "Worth it banget, beda banget hasilnya dari yang gratis. Foto jadi keliatan lebih mahal." },
-  { name: "d*****n", stars: 5, text: "Udah langganan 3 bulan, nggak pernah ada masalah. Panduan aktivasinya jelas banget." },
-  { name: "a*****y", stars: 5, text: "Murah tapi hasil foto premium. Labbet premium via Filtory recommended banget buat konten creator." },
+  { name: "s*****a", stars: 5, text: "Adminnya responsif, beli jam 12 malam tetep dilayani. Preset-nya bagus semua." },
+  { name: "r*****i", stars: 5, text: "worth it bangeet, beda banget presetnya dari versi gratis. Foto jadi keliatan mahal." },
+  { name: "d*****n", stars: 5, text: "Udah langganan 3 bulan, sejauh nggak ada masalah. Aktivasi juga gampang" },
+  { name: "a*****y", stars: 5, text: "App underrated yang ga banyak orang tau. recommended banget buat konten creator." },
 ];
 
 const faqs = [
-  { q: "Ini bukan akun resmi Labbet, apakah aman?", a: "Kami tidak menjual akun resmi, melainkan memberikan panduan akses menggunakan metode aktivasi yang tersedia. Sudah ratusan pembeli dan tidak ada yang bermasalah." },
-  { q: "Proses aktivasinya bagaimana?", a: "Setelah pembayaran dikonfirmasi, kami kirim panduan aktivasi step-by-step via WhatsApp. Prosesnya simpel, bisa selesai dalam 5–10 menit." },
-  { q: "Kalau ganti iPhone atau reset, akses hilang?", a: "Tidak hilang. Kamu tinggal ikuti langkah aktivasi ulang menggunakan panduan yang sudah kami berikan sebelumnya." },
-  { q: "Kenapa harga di website berbeda dengan Shopee?", a: "Pembelian via website menggunakan metode direct transfer (QRIS) sehingga memotong biaya admin marketplace. Transaksi via Shopee menyesuaikan dengan potongan biaya admin platform, namun memberikan opsi proteksi dari marketplace." },
-  { q: "Berapa lama akses aktif?", a: "Tersedia pilihan masa aktif 6 bulan dan 10 bulan untuk pembelian via WhatsApp. Masa aktif via Shopee mengikuti deskripsi produk di toko." },
+  { q: "Apakah ini aman?", a: "Aman kak. kami sudah menjual ke ratusan pembeli dan dan sejauh ini aman aman saja. Kami juga ada garansi selama masa berlangganan kak" },
+  { q: "Proses aktivasinya bagaimana?", a: "Setelah pembayaran, kami kirim panduan aktivasi step-by-step via WhatsApp/chat Shopee. Prosesnya simpel, bisa selesai dalam 5 menit." },
+  { q: "Kalau ganti iPhone atau reset, akses hilang?", a: "Tidak hilang. silakan hubungi kami kembali untuk aktivasi ulang" },
+  { q: "Kenapa harga di website berbeda dengan Shopee?", a: "Pembelian via website menggunakan metode direct transfer (QRIS) sehingga memotong biaya admin marketplace. Transaksi via Shopee menyesuaikan dengan potongan biaya admin platform." },
+  { q: "Berapa lama akses aktif?", a: "Tersedia pilihan masa aktif 6 bulan dan 10 bulan. Silakan pilih sesuai yang ada butuhkan." },
 ];
 ---
 
@@ -47,32 +47,31 @@ const faqs = [
       
       <img src="/images/logo-labbet.png" alt="Labbet" class="hero-logo" />
       
-      <h1 class="massive-title">LABBET PREMIUM.</h1>
-      <p class="hero-desc">Akses penuh seluruh fitur premium Labbet. Grain realistis, preset eksklusif, workflow tanpa batas.</p>
+      <h1 class="massive-title">LABBET PREMIUM</h1>
+      <p class="hero-desc">Akses penuh seluruh fitur premium Labbet App. Preset film eksklusif, workflow tanpa batas.</p>
       
       <div class="cta-group">
-        <a href="https://wa.me/62816957050" target="_blank" class="btn btn-black">BELI VIA WA — MULAI RP39.000</a>
-        <a href="https://s.shopee.co.id/1gG3IthAYI" target="_blank" class="btn btn-outline">CHECKOUT SHOPEE</a>
+        <a href="https://wa.me/62816957050" target="_blank" class="btn btn-black">ORDER VIA WA — MULAI RP39.000</a>
+        <a href="https://s.shopee.co.id/1gG3IthAYI" target="_blank" class="btn btn-outline">CHECKOUT VIA SHOPEE</a>
       </div>
     </div>
   </section>
 
-  <section class="stats-section">
-    <div class="stat-item">
-      <span class="stat-value">500+</span>
-      <span class="stat-label">Pelanggan</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-value">4.9★</span>
-      <span class="stat-label">Rating Shopee</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-value">iOS</span>
-      <span class="stat-label">Platform</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-value">&lt;10 MNT</span>
-      <span class="stat-label">Aktivasi</span>
+  <section class="marquee-section border-bottom">
+    <div class="marquee-track">
+      <span class="marquee-items">
+        <span>100+ PELANGGAN ALL PLATFORM</span>
+        <span>5.0★ RATING SHOPEE</span>
+        <span>BERGARANSI</span>
+        <span>&lt;10 MENIT AKTIVASI</span>
+        <span>Proses Mudah</span>
+      </span>
+      <span class="marquee-items" aria-hidden="true">
+        <span>500+ PELANGGAN</span>
+        <span>4.9★ RATING SHOPEE</span>
+        <span>PLATFORM iOS</span>
+        <span>&lt;10 MNT AKTIVASI</span>
+      </span>
     </div>
   </section>
 
@@ -144,51 +143,58 @@ const faqs = [
         <h2 class="large-heading">PILIH YANG PALING NYAMAN BUATMU.</h2>
       </div>
       <div class="section-content-col steps-grid">
-        <div class="step-card bg-light">
-          <div class="step-header">
-            <span class="step-num">01</span>
-            <span class="step-badge">Lebih hemat</span>
-          </div>
-          <h3 class="step-title">VIA WHATSAPP + QRIS</h3>
-          <ul class="step-list">
-            <li>Klik tombol "Beli via WhatsApp"</li>
-            <li>Kami kirim kode QRIS</li>
-            <li>Bayar via GoPay/DANA/Mobile Banking</li>
-            <li>Terima panduan aktivasi instan</li>
-          </ul>
-          
-          <div class="pricing-block">
-            <div class="price-row">
-              <span class="price-dur">6 BULAN</span>
-              <span class="price-val">RP39.000</span>
+        <div class="step-card bg-light wa-card">
+          <div class="card-content-wrapper">
+            <div class="step-header">
+              <span class="step-num">01</span>
+              <span class="step-badge">Lebih hemat</span>
             </div>
-            <div class="price-row">
-              <span class="price-dur">10 BULAN</span>
-              <span class="price-val">RP49.000</span>
-            </div>
-          </div>
+            
+            <h3 class="step-title">ORDER VIA WHATSAPP</h3>
 
-          <a href="https://wa.me/62816957050" class="btn btn-black w-full mt-auto">BELI VIA WHATSAPP →</a>
+            <ul class="step-list">
+              <li>Klik tombol "Order via WhatsApp"</li>
+              <li>Kami akan memberikan panduan order</li>
+              <li>Bayar via QRIS/Media pembayaran lain</li>
+              <li>Terima panduan aktivasi</li>
+            </ul>
+            
+            <div class="pricing-block">
+              <div class="price-row">
+                <span class="price-dur">6 BULAN</span>
+                <span class="price-val">RP39.000</span>
+              </div>
+              <div class="price-row">
+                <span class="price-dur">10 BULAN</span>
+                <span class="price-val">RP49.000</span>
+              </div>
+            </div>
+
+            <a href="https://wa.me/62816957050" class="btn btn-black w-full mt-auto">ORDER VIA WHATSAPP →</a>
+          </div>
         </div>
 
-        <div class="step-card bg-light">
-          <div class="step-header">
-            <span class="step-num">02</span>
-            <span class="step-badge">Proteksi Shopee</span>
-          </div>
-          <h3 class="step-title">VIA SHOPEE CHECKOUT</h3>
-          <ul class="step-list">
-            <li>Buka toko Filtory di Shopee</li>
-            <li>Checkout seperti biasa</li>
-            <li>Konfirmasi pesanan diterima</li>
-            <li>Panduan aktivasi dikirim via Shopee</li>
-          </ul>
+        <div class="step-card bg-light shopee-card">
+          <div class="card-content-wrapper">
+            <div class="step-header">
+              <span class="step-num">02</span>
+              <span class="step-badge">Proteksi Shopee</span>
+            </div>
+            
+            <h3 class="step-title">ORDER VIA SHOPEE</h3>
 
-          <div class="pricing-block flex-center">
-             <span class="shopee-price-text">CEK HARGA DI APLIKASI</span>
-          </div>
+            <ul class="step-list">
+              <li>Klik tombol "Checkout Via Shopee"</li>
+              <li>Checkout seperti biasa</li>
+              <li>Panduan aktivasi dikirim via chat Shopee</li>
+            </ul>
 
-          <a href="https://s.shopee.co.id/1gG3IthAYI" class="btn btn-outline w-full mt-auto">CHECKOUT SHOPEE →</a>
+            <div class="pricing-block flex-center">
+              <span class="shopee-price-text"></span>
+            </div>
+
+            <a href="https://s.shopee.co.id/1gG3IthAYI" class="btn btn-outline w-full mt-auto">CHECKOUT VIA SHOPEE →</a>
+          </div>
         </div>
       </div>
     </div>
@@ -207,7 +213,7 @@ const faqs = [
             <p class="review-text">"{r.text}"</p>
             <div class="review-author">
               <span class="author-name">{r.name}</span>
-              <span class="author-source">Pembeli via Shopee</span>
+              <span class="author-source">Pembeli via WA</span>
             </div>
           </div>
         ))}
@@ -236,18 +242,18 @@ const faqs = [
 
   <section class="footer-cta-section bg-black text-white">
     <div class="footer-cta-content">
-      <h2 class="massive-title text-white">FOTO YANG TERASA SEPERTI KENANGAN, DI TANGANMU.</h2>
+      <h2 class="massive-title text-white">UBAH FOTO BIASA JADI SEPERTI HASIL KAMERA FILM ESTETIK BERKUALITAS</h2>
       <p class="footer-cta-desc">Aktivasi dalam 10 menit. Ratusan kreator sudah membuktikannya.</p>
       <div class="cta-group justify-center">
-        <a href="https://wa.me/62816957050" class="btn btn-white">BELI VIA WA — MULAI 39K</a>
-        <a href="https://s.shopee.co.id/1gG3IthAYI" class="btn btn-outline-white">CHECKOUT SHOPEE</a>
+        <a href="https://wa.me/62816957050" class="btn btn-white">ORDER VIA WA — MULAI 39K</a>
+        <a href="https://s.shopee.co.id/1gG3IthAYI" class="btn btn-outline-white">CHECKOUT VIA SHOPEE</a>
       </div>
     </div>
   </section>
 
   <footer class="main-footer">
     <div class="footer-bottom">
-      <p>© 2026 Filtory. All rights reserved.</p>
+      <p>© 2026 Filtory.</p>
       <p class="align-right">Labbet Premium Access • Indonesia</p>
     </div>
   </footer>
@@ -311,10 +317,12 @@ const faqs = [
   .hero-container { max-width: 1000px; margin: 0 auto; }
   
   .hero-logo {
-    height: 36px;
+    height: clamp(80px, 15vw, 180px);
     width: auto;
+    max-width: 100%;
     margin: 0 auto 32px auto;
     display: block;
+    object-fit: contain;
   }
 
   .massive-title {
@@ -355,34 +363,34 @@ const faqs = [
   
   .btn:hover { opacity: 0.8; }
 
-  /* Stats Section */
-  .stats-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    border-bottom: 1px solid var(--black);
+  /* Marquee Section */
+  .marquee-section {
+    padding: 24px 0;
+    overflow: hidden;
+    background-color: var(--white);
   }
 
-  .stat-item {
-    padding: 32px 24px;
-    text-align: center;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .stat-value {
-    display: block;
-    font-size: clamp(2rem, 5vw, 4rem);
-    font-weight: 400;
-    letter-spacing: -0.04em;
+  .marquee-track {
+    display: flex;
+    white-space: nowrap;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
     line-height: 1;
-    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    width: fit-content;
+    animation: marquee 20s linear infinite;
   }
 
-  .stat-label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-muted);
+  .marquee-items {
+    display: inline-flex;
+    gap: 1.5em;
+    padding-right: 1.5em;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
   /* Universal Content Layout */
@@ -407,11 +415,16 @@ const faqs = [
     margin: 0;
   }
 
-  /* Features Grid */
-  .features-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
-  .feature-icon { font-size: 2rem; margin-bottom: 16px; }
-  .feature-title { font-size: 1.25rem; font-weight: 600; text-transform: uppercase; margin: 0 0 8px 0; }
-  .feature-desc { color: var(--text-muted); margin: 0; }
+  /* Features Grid - Mobile First */
+  .features-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 16px;
+  }
+  
+  .feature-icon { font-size: 1.5rem; margin-bottom: 8px; }
+  .feature-title { font-size: 1rem; font-weight: 600; text-transform: uppercase; margin: 0 0 8px 0; }
+  .feature-desc { color: var(--text-muted); font-size: 0.85rem; margin: 0; }
 
   /* Comparison Table */
   .comparison-table { width: 100%; border-top: 2px solid var(--black); }
@@ -420,11 +433,57 @@ const faqs = [
 
   /* Steps Grid */
   .steps-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-  .step-card { padding: 32px; border: 1px solid var(--border); display: flex; flex-direction: column; }
+  
+  .step-card { 
+    padding: 32px; 
+    border: 1px solid var(--border); 
+    display: flex; 
+    flex-direction: column; 
+    position: relative; /* Wajib untuk absolute background */
+    overflow: hidden; /* Agar logo tidak keluar box */
+  }
+
+  /* Wrapper konten agar berada di atas background logo */
+  .card-content-wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* Styling pseudo-element untuk background logo WA */
+  .wa-card::before {
+    content: ' ';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image: url('/images/icon-wa.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%; /* Ukuran logo di background */
+    opacity: 0.04; /* Opacity sangat rendah */
+  }
+
+  /* Styling pseudo-element untuk background logo Shopee */
+  .shopee-card::before {
+    content: ' ';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image: url('/images/icon-shopee.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%; /* Ukuran logo di background */
+    opacity: 0.03; /* Opacity sangat rendah */
+  }
+
   .step-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
   .step-num { font-family: 'Playfair Display', serif; font-size: 2rem; }
   .step-badge { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; background: var(--black); color: var(--white); padding: 4px 8px; }
+  
   .step-title { font-size: 1.25rem; margin: 0 0 16px 0; text-transform: uppercase; }
+
   .step-list { margin: 0 0 32px 0; padding-left: 20px; color: var(--text-muted); }
   .step-list li { margin-bottom: 8px; }
 
@@ -461,15 +520,16 @@ const faqs = [
   .footer-bottom { display: flex; flex-direction: column; gap: 8px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
 
   /* Desktop Adjustments */
-  @media (min-width: 768px) {
-    .stats-section { grid-template-columns: repeat(4, 1fr); border-bottom: none; }
-    .stat-item { border-bottom: none; border-top: 1px solid var(--black); border-bottom: 1px solid var(--black); }
-    .stat-item:last-child { border-right: none; }
-    
+  @media (min-width: 768px) {    
     .section-grid { grid-template-columns: 1fr 2fr; }
     .section-title-col { position: sticky; top: 100px; align-self: start; }
     
-    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    /* Revert features back to larger size on desktop */
+    .features-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    .feature-icon { font-size: 2rem; margin-bottom: 16px; }
+    .feature-title { font-size: 1.25rem; }
+    .feature-desc { font-size: 1rem; }
+
     .steps-grid { grid-template-columns: repeat(2, 1fr); }
     .reviews-grid { grid-template-columns: repeat(2, 1fr); }
     
