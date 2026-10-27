@@ -20,7 +20,7 @@ export interface Product {
   shopeeUrl?: string;
   detailUrl?: string;
   iconBg: string;
-  iconType: 'labbet' | 'chatgpt' | 'vsco' | 'google-one' | 'canva' | 'capcut' | 'lightroom';
+  iconType: 'labbet' | 'chatgpt' | 'vsco' | 'google-one' | 'canva' | 'capcut' | 'lightroom' | 'gemini';
   bottomBadge?: string;
 }
 
@@ -48,55 +48,7 @@ export const PRODUCTS: Product[] = [
     detailUrl: "/labbet",
     iconBg: "#0F0F11",
     iconType: "labbet",
-    bottomBadge: "♾️ Sekali Bayar / Garansi Penuh"
-  },
-  {
-    id: "capcut-pro",
-    name: "CapCut Pro (All Device)",
-    category: "photo-video",
-    categoryLabel: "Video Editor",
-    badge: "Stok Terbatas",
-    shortDesc: "Buka semua efek pro, transisi, dan ekspor 4K tanpa watermark. Akun private, anti mental.",
-    longDesc: "Software editing video paling populer untuk konten Reels dan TikTok. Buka seluruh efek VIP, transisi pro, dan auto-caption akurat tanpa watermark.",
-    features: [
-      "Buka semua filter, efek VIP, & transisi pro",
-      "Auto-captions cerdas bahasa Indonesia tanpa watermark",
-      "AI Noise Reduction & Auto Velocity bertenaga AI",
-      "Ekspor video resolusi 4K 60FPS tanpa kompresi"
-    ],
-    plans: [
-      { name: "Akses 1 Bulan", duration: "1 Bulan", price: "Rp25.000", originalPrice: "Rp129.000", popular: false },
-      { name: "Akses 1 Tahun", duration: "1 Tahun", price: "Rp69.000", originalPrice: "Rp899.000", popular: true }
-    ],
-    platform: "All Devices (iOS, Android, PC)",
-    shopeeUrl: "https://s.shopee.co.id/1gG3IthAYI",
-    iconBg: "#000000",
-    iconType: "capcut",
-    bottomBadge: "⚡ Akun Private / Anti Mental"
-  },
-  {
-    id: "canva-pro",
-    name: "Canva Pro (Via Invite Email)",
-    category: "design",
-    categoryLabel: "Desain Grafis",
-    badge: "Wajib Kreator",
-    shortDesc: "Akses jutaan elemen premium, hapus background otomatis, dan brand kit langsung di akun pribadimu.",
-    longDesc: "Aktivasi langsung ke email akun Canva pribadimu tanpa perlu ganti akun. Semua proyek desain lama tetap aman dan langsung mendapatkan fitur Pro.",
-    features: [
-      "100M+ template, foto, video, & font premium",
-      "Magic Switch, Resize otomatis, & Background Remover",
-      "Brand Kit eksklusif & cloud storage tak terbatas",
-      "Gabung langsung ke email pribadimu secara resmi"
-    ],
-    plans: [
-      { name: "Durasi 6 Bulan", duration: "6 Bulan", price: "Rp25.000", originalPrice: "Rp250.000", popular: false },
-      { name: "Durasi 1 Tahun", duration: "1 Tahun", price: "Rp39.000", originalPrice: "Rp499.000", popular: true }
-    ],
-    platform: "All Devices (iOS, Android, PC)",
-    shopeeUrl: "https://s.shopee.co.id/1gG3IthAYI",
-    iconBg: "#00C4CC",
-    iconType: "canva",
-    bottomBadge: "✉️ Gabung Email Pribadi Resmi"
+    bottomBadge: "♾️ Sekali Bayar / Bergaransi"
   },
   {
     id: "chatgpt-plus",
@@ -104,10 +56,10 @@ export const PRODUCTS: Product[] = [
     category: "ai",
     categoryLabel: "AI & Smart Tools",
     badge: "Paling Dicari",
-    shortDesc: "Akses model AI terbaru, analisis file, dan respon cepat tanpa kena limit jam sibuk.",
-    longDesc: "Akses model kecerdasan buatan paling mutakhir GPT-4o, DALL·E 3, visual reasoning, dan web browsing untuk skripsi, riset, coding, dan copywriting.",
+    shortDesc: "Akses model AI terbaru GPT-4o, analisis file & visual, serta respon prioritas.",
+    longDesc: "Akses model kecerdasan buatan paling mutakhir GPT-4o, DALL·E 3, visual reasoning, canvas coding, dan web browsing real-time untuk skripsi, riset, coding, dan copywriting.",
     features: [
-      "Akses penuh GPT-4o & model reasoning mutakhir",
+      "Akses penuh GPT-4o, Canvas & reasoning model",
       "Generate gambar ultra realistis via DALL·E 3",
       "Advanced Voice mode canggih & Web browsing real-time",
       "Akun Private personal, akses penuh tanpa rebutan"
@@ -116,33 +68,31 @@ export const PRODUCTS: Product[] = [
       { name: "Akses 1 Bulan", duration: "1 Bulan", price: "Rp85.000", originalPrice: "Rp350.000", popular: true }
     ],
     platform: "All Devices (iOS, Android, PC)",
-    shopeeUrl: "https://s.shopee.co.id/1gG3IthAYI",
     iconBg: "#10A37F",
     iconType: "chatgpt",
     bottomBadge: "🤖 Akun Private / Model GPT-4o"
   },
   {
-    id: "vsco-pro",
-    name: "VSCO Pro / X (iOS & Android)",
-    category: "photo-video",
-    categoryLabel: "Foto & Film",
-    badge: "Creator Choice",
-    shortDesc: "Standar industri fotografi mobile. Buka seluruh 200+ preset legendaris Kodak, Fuji, dan tool video pro.",
-    longDesc: "Buka seluruh 200+ filter preset legendaris Kodak, Fuji, dan Ilford. Dilengkapi tool HSL lengkap dan color grading video sinematik 60 FPS.",
+    id: "gemini-advanced",
+    name: "Google Gemini Advanced (Private)",
+    category: "ai",
+    categoryLabel: "AI & Smart Tools",
+    badge: "Rekomendasi AI",
+    shortDesc: "Model AI 1.5 Pro dengan context window 1 juta token, integrasi Workspace & Google Drive.",
+    longDesc: "Model AI tercanggih dari Google dengan context window 1 juta token yang mampu menganalisis ratusan halaman dokumen, video panjang, serta terintegrasi langsung dengan Docs, Gmail, dan Google Drive.",
     features: [
-      "Buka seluruh 200+ preset film analog eksklusif",
-      "VSCO Film X tools (Kodak, Fuji, Ilford simulation)",
-      "Video color grading & slow motion frame control",
-      "Akses multi-device (iOS & Android) bergaransi"
+      "Model Gemini 1.5 Pro dengan context window 1M token",
+      "Analisis dokumen panjang, video, data, & coding",
+      "Integrasi langsung ke Google Docs, Gmail, & Drive",
+      "Akun Private personal, akses resmi & bergaransi"
     ],
     plans: [
-      { name: "Akses 1 Tahun", duration: "1 Tahun", price: "Rp35.000", originalPrice: "Rp490.000", popular: true }
+      { name: "Akses 1 Bulan", duration: "1 Bulan", price: "Rp65.000", originalPrice: "Rp309.000", popular: true }
     ],
-    platform: "iOS & Android",
-    shopeeUrl: "https://s.shopee.co.id/1gG3IthAYI",
-    iconBg: "#1E1E1E",
-    iconType: "vsco",
-    bottomBadge: "🎞️ 200+ Preset Film Lengkap"
+    platform: "All Devices (iOS, Android, PC)",
+    iconBg: "#1E88E5",
+    iconType: "gemini",
+    bottomBadge: "✨ Model 1.5 Pro / 1M Context Window"
   }
 ];
 

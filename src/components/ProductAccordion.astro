@@ -110,15 +110,31 @@ const baseWaUrl = "https://wa.me/62816957050";
               )}
 
               <div class="acc-cta-wrap">
-                <a 
-                  href={`${baseWaUrl}?text=${encodeURIComponent(initialWaText)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="acc-cta-btn"
-                >
-                  <span>Pesan via WhatsApp</span>
+                <!-- Order Sekarang -> Smooth scroll ke #jalur-order -->
+                <a href="#jalur-order" class="acc-cta-btn">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                  <span>Order Sekarang</span>
                   <span class="acc-arrow">→</span>
                 </a>
+
+                {product.shopeeUrl && (
+                  <!-- Khusus Labbet: Checkout via Shopee -->
+                  <a 
+                    href={product.shopeeUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="acc-shopee-btn"
+                  >
+                    <!-- Shopee Bag Icon -->
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19.5 6h-3.08A4.992 4.992 0 0 0 12 2a4.992 4.992 0 0 0-4.42 4H4.5A2.5 2.5 0 0 0 2 8.5v10A3.5 3.5 0 0 0 5.5 22h13a3.5 3.5 0 0 0 3.5-3.5v-10A2.5 2.5 0 0 0 19.5 6zM12 4c1.3 0 2.4.84 2.82 2H9.18A3.003 3.003 0 0 1 12 4zm2.18 10.66c-.19.98-1.07 1.84-2.4 1.84-1.52 0-2.61-.98-2.61-2.3 0-1.63 1.5-2.24 3.04-2.65.91-.25 1.5-.45 1.85-.75.05.29.07.57.07.86 0 1.05-.34 2.15-.95 3zm-4.36-4.66c.19-.98 1.07-1.84 2.4-1.84 1.52 0 2.61.98 2.61 2.3 0 .42-.1.8-.27 1.15-.36.21-.92.38-1.67.58-.91.25-1.5.45-1.85.75-.05-.29-.07-.57-.07-.86 0-1.05.34-2.15.95-3z"/>
+                    </svg>
+                    <span>Checkout Shopee</span>
+                    <span class="acc-arrow">→</span>
+                  </a>
+                )}
               </div>
             </div>
 
@@ -177,9 +193,6 @@ const baseWaUrl = "https://wa.me/62816957050";
 
           if (priceTarget && newPrice) {
             priceTarget.textContent = newPrice;
-          }
-          if (ctaBtn && newWaUrl) {
-            ctaBtn.setAttribute('href', newWaUrl);
           }
         });
       });

@@ -53,6 +53,14 @@ const { type, size = 44 } = Astro.props;
     </div>
   )}
 
+  {type === 'gemini' && (
+    <div class="w-full h-full bg-gradient-to-tr from-[#1E88E5] via-[#7B1FA2] to-[#E91E63] flex items-center justify-center text-white">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C12 7.52285 7.52285 12 2 12C7.52285 12 12 16.4772 12 22C12 16.4772 16.4772 12 22 12C16.4772 12 12 7.52285 12 2Z" />
+      </svg>
+    </div>
+  )}
+
   {type === 'capcut' && (
     <div class="w-full h-full bg-black flex items-center justify-center text-white">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
