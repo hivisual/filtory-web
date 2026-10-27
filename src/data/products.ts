@@ -118,34 +118,28 @@ export const TRUST_POINTS = [
 
 export const TESTIMONIALS = [
   {
-    quote: "Awalnya sempat ragu beli di luar App Store, ternyata prosesnya cepet banget dan dipandu sampai beneran kebuka semua fiturnya. Aman banget.",
-    name: "Dinda",
-    source: "Pembeli via WhatsApp",
-    channel: "WA"
+    stars: "★★★★★",
+    quote: "Adminnya responsif, beli jam 12 malam tetep dilayani. Preset-nya bagus semua.",
+    name: "s*****a",
+    source: "Pembeli via WA"
   },
   {
-    quote: "Harga jauh lebih masuk akal dibanding langganan bulanan sendiri. Udah jalan 3 bulan aman sentosa nggak pernah kena kick.",
-    name: "Rizky",
-    source: "Pembeli via Shopee",
-    channel: "Shopee"
+    stars: "★★★★★",
+    quote: "worth it bangeet, beda banget presetnya dari versi gratis. Foto jadi keliatan mahal.",
+    name: "r*****i",
+    source: "Pembeli via WA"
   },
   {
-    quote: "Adminnya fast respon parah. Sempet bingung cara loginnya, langsung dibantuin step-by-step sampai beres nggak sampai 5 menit.",
-    name: "Nadia",
-    source: "Pembeli via WhatsApp",
-    channel: "WA"
+    stars: "★★★★★",
+    quote: "Udah langganan 3 bulan, sejauh nggak ada masalah. Aktivasi juga gampang",
+    name: "d*****n",
+    source: "Pembeli via WA"
   },
   {
-    quote: "Preset Luxra & Laurel di Labbet langsung kebuka semua. Warnanya estetik parah, feeds Instagram jadi keliatan mahal.",
-    name: "Farhan",
-    source: "Fotografer Mobile",
-    channel: "WA"
-  },
-  {
-    quote: "Langganan ChatGPT Plus di Filtory hemat banyak buat skripsi dan kerjaan. Akun lancar jaya, CS-nya ramah banget.",
-    name: "Reza",
-    source: "Mahasiswa & Freelancer",
-    channel: "Shopee"
+    stars: "★★★★★",
+    quote: "App underrated yang ga banyak orang tau. recommended banget buat konten creator.",
+    name: "a*****y",
+    source: "Pembeli via WA"
   }
 ];
 

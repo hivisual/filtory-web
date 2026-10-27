@@ -858,7 +858,8 @@ h2 {
 }
 
 .faq-item summary:hover {
-  color: var(--accent);
+  color: #000000;
+  opacity: 0.75;
 }
 
 .faq-item summary::-webkit-details-marker {
