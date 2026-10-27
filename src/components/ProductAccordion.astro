@@ -15,7 +15,7 @@ const baseWaUrl = "https://wa.me/62816957050";
   {products.map((product) => {
     const isInitiallyExpanded = product.id === initialExpandedId;
     const defaultPlan = product.plans[product.plans.length - 1];
-    const initialWaText = `Halo Filtory, saya mau pesan ${product.name} - ${defaultPlan.name} (${defaultPlan.price})`;
+    const displayPrice = product.plans.length > 1 ? `Mulai ${product.plans[0].price}` : product.plans[0].price;
 
     return (
       <article 
@@ -45,7 +45,7 @@ const baseWaUrl = "https://wa.me/62816957050";
 
           <!-- SLOT 3: PRICE (VERTICAL CENTER, NO RADIO / CHECKBOX) -->
           <div class="acc-slot-price">
-            <span class="acc-price-text acc-price-target">{defaultPlan.price}</span>
+            <span class="acc-price-text acc-price-target">{displayPrice}</span>
           </div>
         </header>
 
@@ -55,9 +55,8 @@ const baseWaUrl = "https://wa.me/62816957050";
         <!-- EXPANDED BODY PANEL -->
         <div class="acc-body">
           <div class="acc-body-content">
-            <!-- DESKRIPSI LENGKAP -->
+            <!-- DESKRIPSI -->
             <div class="acc-section">
-              <h4 class="acc-section-label">DESKRIPSI LENGKAP:</h4>
               <p class="acc-desc-text">
                 {product.longDesc || product.shortDesc}
               </p>
@@ -65,12 +64,12 @@ const baseWaUrl = "https://wa.me/62816957050";
 
             <!-- FITUR UTAMA -->
             <div class="acc-section">
-              <h4 class="acc-section-label">FITUR UTAMA:</h4>
+              <h4 class="acc-section-label">FITUR & BENEFIT:</h4>
               <ul class="acc-features-list">
                 {product.features.map((feat) => (
                   <li class="acc-feature-item">
-                    <svg class="acc-feature-icon" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    <svg class="acc-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                     <span>{feat}</span>
                   </li>
@@ -78,25 +77,20 @@ const baseWaUrl = "https://wa.me/62816957050";
               </ul>
             </div>
 
-            <!-- PILIHAN DURASI / PAKET (JIKA MULTI-PLAN) -->
+            <!-- PILIHAN DURASI / PAKET (LANGSUNG TERCANTUM JELAS) -->
             {product.plans.length > 1 && (
               <div class="acc-section">
                 <h4 class="acc-section-label">PILIHAN PAKET:</h4>
-                <div class="acc-plans-row">
-                  {product.plans.map((p, pIdx) => {
-                    const isSelected = pIdx === product.plans.length - 1;
-                    return (
-                      <button
-                        type="button"
-                        class={`acc-plan-btn ${isSelected ? 'active' : ''}`}
-                        data-price={p.price}
-                        data-name={p.name}
-                        data-wa-url={`${baseWaUrl}?text=${encodeURIComponent(`Halo Filtory, saya mau pesan ${product.name} - ${p.name} (${p.price})`)}`}
-                      >
-                        {p.name} ({p.price})
-                      </button>
-                    );
-                  })}
+                <div class="acc-plans-static-row">
+                  {product.plans.map((p) => (
+                    <div class="acc-plan-static-badge">
+                      <span class="acc-plan-name">{p.name}</span>
+                      <div class="acc-plan-pricing">
+                        {p.originalPrice && <span class="acc-plan-orig">{p.originalPrice}</span>}
+                        <span class="acc-plan-price">{p.price}</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             )}
@@ -105,6 +99,10 @@ const baseWaUrl = "https://wa.me/62816957050";
             <div class="acc-footer-row">
               {product.bottomBadge && (
                 <div class="acc-bottom-badge">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <polyline points="9 12 11 14 15 10"></polyline>
+                  </svg>
                   <span>{product.bottomBadge}</span>
                 </div>
               )}
@@ -155,9 +153,6 @@ const baseWaUrl = "https://wa.me/62816957050";
 
     cards.forEach((card) => {
       const header = card.querySelector('.acc-header');
-      const priceTarget = card.querySelector('.acc-price-target');
-      const ctaBtn = card.querySelector('.acc-cta-btn');
-      const planBtns = card.querySelectorAll('.acc-plan-btn');
 
       // Click header to toggle expand/collapse
       header.addEventListener('click', (e) => {
@@ -179,22 +174,6 @@ const baseWaUrl = "https://wa.me/62816957050";
           card.classList.add('is-expanded');
           header.setAttribute('aria-expanded', 'true');
         }
-      });
-
-      // Handle plan buttons switching
-      planBtns.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          planBtns.forEach((b) => b.classList.remove('active'));
-          btn.classList.add('active');
-
-          const newPrice = btn.getAttribute('data-price');
-          const newWaUrl = btn.getAttribute('data-wa-url');
-
-          if (priceTarget && newPrice) {
-            priceTarget.textContent = newPrice;
-          }
-        });
       });
     });
   }

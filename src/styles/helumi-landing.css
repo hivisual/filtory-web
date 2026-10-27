@@ -931,8 +931,8 @@ h2 {
 }
 
 .acc-card.is-expanded {
-  border-color: #1d1d1f;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.14);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 .acc-header {
@@ -1107,40 +1107,56 @@ h2 {
 }
 
 .acc-feature-icon {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   flex-shrink: 0;
-  color: #30d158;
-  margin-top: 1px;
-}
-
-.acc-plans-row {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
-}
-
-.acc-plan-btn {
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 500;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background: #ffffff;
   color: #1d1d1f;
-  cursor: pointer;
-  transition: all 0.15s ease;
+  margin-top: 2px;
 }
 
-.acc-plan-btn:hover {
-  border-color: rgba(0, 0, 0, 0.3);
+.acc-plans-static-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+  margin-bottom: 14px;
 }
 
-.acc-plan-btn.active {
-  background: #1d1d1f;
-  color: #ffffff;
-  border-color: #1d1d1f;
+.acc-plan-static-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 14px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  font-size: 13px;
+  flex: 1;
+  min-width: 160px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.acc-plan-name {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.acc-plan-pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.acc-plan-orig {
+  font-size: 11.5px;
+  color: var(--subtle);
+  text-decoration: line-through;
+}
+
+.acc-plan-price {
+  font-weight: 700;
+  color: var(--text);
 }
 
 .acc-cta-wrap {
