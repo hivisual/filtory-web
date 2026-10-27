@@ -20,6 +20,19 @@ const SHOPEE_LINK = "https://s.shopee.co.id/1gG3IthAYI";
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script is:inline>
+    // Pastikan web selalu terbuka dari posisi paling atas secara default
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    window.addEventListener('load', () => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    });
+  </script>
 </head>
 <body>
   <div style="display:contents">
