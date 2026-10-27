@@ -4,16 +4,16 @@ import AppIcon from './AppIcon.astro';
 
 interface Props {
   products: Product[];
-  initialExpandedId?: string;
+  initialExpandedId?: string | null;
 }
 
-const { products, initialExpandedId = "labbet-premium" } = Astro.props;
+const { products, initialExpandedId = null } = Astro.props;
 const baseWaUrl = "https://wa.me/62816957050";
 ---
 
 <div class="accordion-list" id="product-accordion-list">
   {products.map((product) => {
-    const isInitiallyExpanded = product.id === initialExpandedId;
+    const isInitiallyExpanded = initialExpandedId ? product.id === initialExpandedId : false;
     const defaultPlan = product.plans[product.plans.length - 1];
     const displayPrice = product.plans.length > 1 ? `Mulai ${product.plans[0].price}` : product.plans[0].price;
 
@@ -27,7 +27,7 @@ const baseWaUrl = "https://wa.me/62816957050";
         <header class="acc-header" role="button" aria-expanded={isInitiallyExpanded ? "true" : "false"}>
           <!-- SLOT 1: LOGO -->
           <div class="acc-slot-logo" aria-hidden="true">
-            <AppIcon type={product.iconType} size={44} />
+            <AppIcon type={product.iconType} size={56} />
           </div>
 
           <!-- SLOT 2: INFO (FLEX GROW) -->
