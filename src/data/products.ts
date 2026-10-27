@@ -100,7 +100,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "chatgpt-plus",
-    name: "ChatGPT Plus (Shared / Private)",
+    name: "ChatGPT Plus (Private)",
     category: "ai",
     categoryLabel: "AI & Smart Tools",
     badge: "Paling Dicari",
@@ -110,17 +110,16 @@ export const PRODUCTS: Product[] = [
       "Akses penuh GPT-4o & model reasoning mutakhir",
       "Generate gambar ultra realistis via DALL·E 3",
       "Advanced Voice mode canggih & Web browsing real-time",
-      "Pilihan akun Sharing hemat atau Private eksklusif"
+      "Akun Private personal, akses penuh tanpa rebutan"
     ],
     plans: [
-      { name: "1 Bulan Sharing", duration: "1 Bulan", price: "Rp45.000", originalPrice: "Rp350.000", popular: false },
-      { name: "1 Bulan Private", duration: "1 Bulan", price: "Rp85.000", originalPrice: "Rp350.000", popular: true }
+      { name: "Akses 1 Bulan", duration: "1 Bulan", price: "Rp85.000", originalPrice: "Rp350.000", popular: true }
     ],
     platform: "All Devices (iOS, Android, PC)",
     shopeeUrl: "https://s.shopee.co.id/1gG3IthAYI",
     iconBg: "#10A37F",
     iconType: "chatgpt",
-    bottomBadge: "🤖 Model GPT-4o Tercepat"
+    bottomBadge: "🤖 Akun Private / Model GPT-4o"
   },
   {
     id: "vsco-pro",
@@ -201,22 +200,22 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     q: "Apakah aplikasi di sini 100% aman untuk HP/Laptop saya?",
-    a: "Sangat aman. Kamu tetap mengunduh aplikasinya langsung dari App Store, Play Store, atau web resmi masing-masing aplikasi. Kami hanya menyediakan akses akun atau lisensi premiumnya, bukan file modifikasi (MOD/Crack) yang berbahaya."
+    a: "Sangat aman. Kamu tetap mengunduh aplikasinya langsung dari App Store, Play Store, atau web resmi masing-masing aplikasi. Kami hanya menyediakan akses akun atau lisensi resminya, bukan file modifikasi (MOD/APK/Crack) yang berbahaya."
   },
   {
     q: "Bagaimana prosesnya setelah saya bayar?",
-    a: "Begitu pembayaran terkonfirmasi, admin akan langsung mengirimkan detail akses beserta panduan cara pakainya lewat chat. Rata-rata hanya memakan waktu 5–10 menit saat jam operasional."
+    a: "Begitu konfirmasi pembayaran diterima, admin akan langsung mengirimkan detail akses akun beserta panduan pakainya via chat. Rata-rata hanya memakan waktu 5–10 menit saat jam operasional."
   },
   {
-    q: "Apa bedanya akun Sharing dan Private?",
-    a: "Akun Sharing digunakan bersama pembeli lain (harga jauh lebih murah, cocok untuk pemakaian santai dengan aturan tertentu). Akun Private khusus untuk kamu sendiri atau menggunakan email pribadimu, sehingga privasi proyek/desainmu 100% terjaga."
+    q: "Apakah Filtory menjual akun sharing (dipakai ramai-ramai)?",
+    a: "Tidak. Filtory tidak menjual akun sharing yang dipakai bersama pembeli lain. Semua akun adalah akun private, personal, atau via invite resmi ke email pribadimu sehingga privasi aman, tidak rebutan perangkat, dan tidak gampang logout sendiri."
   },
   {
-    q: "Bagaimana kalau akun bermasalah di tengah masa langganan?",
-    a: "Setiap pembelian di Filtory dilindungi garansi sesuai durasi paket yang kamu beli. Selama tidak melanggar aturan pemakaian (seperti mengubah password pada akun sharing), tinggal hubungi admin dan akan langsung kami ganti atau perbaiki."
+    q: "Bagaimana dengan sistem garansinya?",
+    a: "Setiap pembelian bergaransi sesuai ketentuan dan durasi yang tertera pada deskripsi masing-masing produk di katalog atas. Jika terjadi kendala selama masa garansi aktif sesuai ketentuan produk, tim admin kami siap membantu sampai beres atau diganti baru."
   },
   {
     q: "Kalau saya ganti HP atau perangkat baru, apakah aksesnya hilang?",
-    a: "Tergantung jenis aplikasi yang kamu beli. Sebagian besar bisa langsung dipindah hanya dengan login ulang. Detail aturannya tertera jelas di deskripsi masing-masing aplikasi pada katalog di atas."
+    a: "Sebagian besar aplikasi bisa langsung digunakan di perangkat baru cukup dengan login ulang. Detail ketentuan perangkat tertera jelas pada deskripsi masing-masing produk di katalog atas."
   }
 ];
