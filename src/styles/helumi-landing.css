@@ -721,6 +721,13 @@ h2 {
 }
 
 .say:hover { transform: translateY(-3px); }
+.say-stars {
+  color: var(--text);
+  font-size: 20px;
+  letter-spacing: 3px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
 .say-quote { font-size: 14px; color: var(--text); line-height: 1.5; }
 .say-who { display: flex; align-items: center; gap: 10px; }
 .say-face { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; background: #e5e5ea; }
@@ -939,10 +946,10 @@ h2 {
 .acc-header {
   display: flex;
   align-items: center;
-  padding: 14px 18px;
+  padding: 16px 20px;
   cursor: pointer;
   user-select: none;
-  gap: 14px;
+  gap: 16px;
   background: #ffffff;
   transition: background 0.15s ease;
 }
@@ -952,8 +959,8 @@ h2 {
 }
 
 .acc-slot-logo {
-  width: 56px;
-  height: 56px;
+  width: 80px;
+  height: 80px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -1222,6 +1229,17 @@ h2 {
 .acc-cta-btn:hover .acc-arrow,
 .acc-shopee-btn:hover .acc-arrow {
   transform: translateX(3px);
+}
+
+@media (max-width: 540px) {
+  .acc-header {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  .acc-slot-logo {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 @media (max-width: 480px) {
