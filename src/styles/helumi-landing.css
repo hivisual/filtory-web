@@ -1308,3 +1308,135 @@ h2 {
 .channel-cta {
   width: 100%;
 }
+
+
+/* COMPARISON TABLE (.cmp) SESUAI GAMBAR REFERENSI D:\PRJ\filtory-web\2026-10-27_09-23.png */
+.cmp {
+  max-width: 680px;
+  margin: 32px auto 0;
+  padding: 10px 18px 18px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+}
+
+.cmp-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) 130px 130px;
+  align-items: stretch;
+}
+
+@media (max-width: 640px) {
+  .cmp {
+    padding: 8px 12px 14px;
+    border-radius: 18px;
+    overflow-x: auto;
+  }
+  .cmp-row {
+    grid-template-columns: minmax(160px, 1.6fr) 95px 95px;
+    min-width: 350px;
+  }
+}
+
+.cmp-row > span {
+  min-height: 52px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 13.5px;
+}
+
+.cmp-row + .cmp-row > span {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.cmp-row > .cmp-label {
+  color: var(--text);
+  text-align: left;
+  justify-content: flex-start;
+  font-weight: 500;
+  font-size: 13.5px;
+  line-height: 1.45;
+  padding-left: 10px;
+}
+
+.cmp-head > span {
+  min-height: 80px;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.cmp-row > .cmp-us {
+  background: var(--bg);
+}
+
+.cmp-head > .cmp-us {
+  border-radius: 14px 14px 0 0;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.cmp-head > .cmp-them {
+  color: var(--subtle);
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.cmp-row:last-child > .cmp-us {
+  border-radius: 0 0 14px 14px;
+}
+
+.cmp-brand-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+}
+
+.cmp-them-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--subtle);
+}
+
+.cmp-yes {
+  background: #1d1d1f;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.cmp-no {
+  color: var(--subtle);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.cmp-bad {
+  color: #8e8e93;
+  font-size: 12.5px;
+  line-height: 1.35;
+  font-weight: 400;
+}
