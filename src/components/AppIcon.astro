@@ -1,0 +1,69 @@
+---
+interface Props {
+  type: string;
+  size?: number;
+}
+
+const { type, size = 44 } = Astro.props;
+---
+
+<div class="app-squircle" style={`width: ${size}px; height: ${size}px;`}>
+  {type === 'labbet' && (
+    <div class="w-full h-full bg-[#111] flex items-center justify-center p-2">
+      <img src="/images/logo-labbet.png" alt="Labbet" class="w-full h-full object-contain" />
+    </div>
+  )}
+
+  {type === 'chatgpt' && (
+    <div class="w-full h-full bg-[#10A37F] flex items-center justify-center text-white">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.5045 4.5045 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.8956zm16.0993 3.8558L12.5973 8.3829l2.02-1.1639a.0804.0804 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.402-.6859zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.407 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.6644zm-12.6413-1.0227l2.02-1.1686a.0804.0804 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.402-.6859l-5.8428-3.3638zm1.9964 4.7078l2.946-1.7003 2.946 1.7003v3.4005l-2.946 1.7003-2.946-1.7003z" />
+      </svg>
+    </div>
+  )}
+
+  {type === 'vsco' && (
+    <div class="w-full h-full bg-[#18181A] flex items-center justify-center text-white">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="5" />
+        <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+        <line x1="12" y1="3" x2="12" y2="7" />
+        <line x1="12" y1="17" x2="12" y2="21" />
+        <line x1="3" y1="12" x2="7" y2="12" />
+        <line x1="17" y1="12" x2="21" y2="12" />
+      </svg>
+    </div>
+  )}
+
+  {type === 'google-one' && (
+    <div class="w-full h-full bg-white flex items-center justify-center border border-neutral-200">
+      <svg width="22" height="22" viewBox="0 0 48 48">
+        <path fill="#4285F4" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+        <path fill="#34A853" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+        <path fill="#EA4335" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+      </svg>
+    </div>
+  )}
+
+  {type === 'canva' && (
+    <div class="w-full h-full bg-gradient-to-tr from-[#00C4CC] to-[#7D2AE8] flex items-center justify-center text-white">
+      <span class="font-serif italic font-bold text-lg select-none">C</span>
+    </div>
+  )}
+
+  {type === 'capcut' && (
+    <div class="w-full h-full bg-black flex items-center justify-center text-white">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19.3 5.4l-4.5 4.5 4.5 4.5c.8.8.8 2 0 2.8s-2 .8-2.8 0l-5.9-5.9c-.8-.8-.8-2 0-2.8l5.9-5.9c.8-.8 2-.8 2.8 0s.8 2 0 2.8zM4.7 18.6l4.5-4.5-4.5-4.5c-.8-.8-.8-2 0-2.8s2-.8 2.8 0l5.9 5.9c.8.8.8 2 0 2.8l-5.9 5.9c-.8.8-2 .8-2.8 0s-.8-2 0-2.8z"/>
+      </svg>
+    </div>
+  )}
+
+  {type === 'lightroom' && (
+    <div class="w-full h-full bg-[#001E36] flex items-center justify-center text-[#31A8FF]">
+      <span class="font-bold text-sm select-none">Lr</span>
+    </div>
+  )}
+</div>

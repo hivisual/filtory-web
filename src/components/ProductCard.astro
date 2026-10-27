@@ -1,0 +1,100 @@
+---
+import type { Product } from '../data/products';
+import AppIcon from './AppIcon.astro';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const defaultPlan = product.plans[product.plans.length - 1];
+const baseWaUrl = "https://wa.me/62816957050";
+---
+
+<article 
+  class="app-card"
+  data-category={product.category}
+  data-name={product.name.toLowerCase()}
+>
+  <div>
+    <!-- Top row: squircle icon & title -->
+    <div class="app-card-top">
+      <div class="app-card-header">
+        <AppIcon type={product.iconType} size={44} />
+        <div>
+          <h3 class="app-name">{product.name.toLowerCase()}</h3>
+          <p class="app-cat">{product.categoryLabel.toLowerCase()} · {product.platform.toLowerCase()}</p>
+        </div>
+      </div>
+
+      {product.badge && (
+        <span class="app-badge">{product.badge.toLowerCase()}</span>
+      )}
+    </div>
+
+    <!-- Description -->
+    <p class="app-desc">{product.shortDesc.toLowerCase()}</p>
+
+    <!-- Bullets -->
+    <ul class="app-bullets">
+      {product.features.map((feat) => (
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          <span>{feat.toLowerCase()}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div>
+    <!-- Plan chips -->
+    {product.plans.length > 1 && (
+      <div class="plan-chips">
+        {product.plans.map((p, idx) => (
+          <button 
+            type="button"
+            class={`plan-chip ${idx === product.plans.length - 1 ? 'active' : ''}`}
+            data-price={p.price}
+            data-was={p.originalPrice || ''}
+            data-plan-name={p.name}
+            data-wa-url={`${baseWaUrl}?text=${encodeURIComponent(`Halo Filtory, saya mau order ${product.name} - ${p.name} (${p.price})`)}`}
+          >
+            {p.duration.toLowerCase()}
+          </button>
+        ))}
+      </div>
+    )}
+
+    <!-- Pricing bar & CTA -->
+    <div class="app-pricing-bar">
+      <div class="app-price-box">
+        <div class="app-price-val">
+          <span class="price-target">{defaultPlan.price}</span>
+          {defaultPlan.originalPrice && (
+            <span class="app-price-was was-target">{defaultPlan.originalPrice}</span>
+          )}
+        </div>
+        <span class="app-price-sub plan-name-target">{defaultPlan.name.toLowerCase()}</span>
+      </div>
+
+      <div style="display:flex;gap:6px;align-items:center;">
+        {product.detailUrl && (
+          <a href={product.detailUrl} class="pill" style="height:34px;padding:0 12px;font-size:12px;background:var(--bg);color:var(--ink-2);">
+            review
+          </a>
+        )}
+        <a 
+          href={`${baseWaUrl}?text=${encodeURIComponent(`Halo Filtory, saya mau order ${product.name} - ${defaultPlan.name} (${defaultPlan.price})`)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="pill pill-dark order-btn-target"
+          style="height:34px;padding:0 14px;font-size:12px;"
+        >
+          order <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</article>

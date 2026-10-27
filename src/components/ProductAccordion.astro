@@ -1,0 +1,194 @@
+---
+import type { Product } from '../data/products';
+import AppIcon from './AppIcon.astro';
+
+interface Props {
+  products: Product[];
+  initialExpandedId?: string;
+}
+
+const { products, initialExpandedId = "labbet-premium" } = Astro.props;
+const baseWaUrl = "https://wa.me/62816957050";
+---
+
+<div class="accordion-list" id="product-accordion-list">
+  {products.map((product) => {
+    const isInitiallyExpanded = product.id === initialExpandedId;
+    const defaultPlan = product.plans[product.plans.length - 1];
+    const initialWaText = `Halo Filtory, saya mau pesan ${product.name} - ${defaultPlan.name} (${defaultPlan.price})`;
+
+    return (
+      <article 
+        class={`acc-card ${isInitiallyExpanded ? 'is-expanded' : ''}`}
+        id={`product-card-${product.id}`}
+        data-product-id={product.id}
+      >
+        <!-- CARD HEADER / TRIGGER (SLOT 1, SLOT 2, SLOT 3) -->
+        <header class="acc-header" role="button" aria-expanded={isInitiallyExpanded ? "true" : "false"}>
+          <!-- SLOT 1: LOGO -->
+          <div class="acc-slot-logo" aria-hidden="true">
+            <AppIcon type={product.iconType} size={44} />
+          </div>
+
+          <!-- SLOT 2: INFO (FLEX GROW) -->
+          <div class="acc-slot-info">
+            <div class="acc-info-title-row">
+              <h3 class="acc-title">{product.name}</h3>
+              {product.badge && (
+                <span class={`acc-badge ${product.badge.toLowerCase().includes('laris') || product.badge.toLowerCase().includes('popular') || product.badge.toLowerCase().includes('terbatas') ? 'popular' : ''}`}>
+                  {product.badge}
+                </span>
+              )}
+            </div>
+            <p class="acc-summary">{product.shortDesc}</p>
+          </div>
+
+          <!-- SLOT 3: PRICE (VERTICAL CENTER, NO RADIO / CHECKBOX) -->
+          <div class="acc-slot-price">
+            <span class="acc-price-text acc-price-target">{defaultPlan.price}</span>
+          </div>
+        </header>
+
+        <!-- DIVIDER LINE -->
+        <div class="acc-divider" aria-hidden="true"></div>
+
+        <!-- EXPANDED BODY PANEL -->
+        <div class="acc-body">
+          <div class="acc-body-content">
+            <!-- DESKRIPSI LENGKAP -->
+            <div class="acc-section">
+              <h4 class="acc-section-label">DESKRIPSI LENGKAP:</h4>
+              <p class="acc-desc-text">
+                {product.longDesc || product.shortDesc}
+              </p>
+            </div>
+
+            <!-- FITUR UTAMA -->
+            <div class="acc-section">
+              <h4 class="acc-section-label">FITUR UTAMA:</h4>
+              <ul class="acc-features-list">
+                {product.features.map((feat) => (
+                  <li class="acc-feature-item">
+                    <svg class="acc-feature-icon" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- PILIHAN DURASI / PAKET (JIKA MULTI-PLAN) -->
+            {product.plans.length > 1 && (
+              <div class="acc-section">
+                <h4 class="acc-section-label">PILIHAN PAKET:</h4>
+                <div class="acc-plans-row">
+                  {product.plans.map((p, pIdx) => {
+                    const isSelected = pIdx === product.plans.length - 1;
+                    return (
+                      <button
+                        type="button"
+                        class={`acc-plan-btn ${isSelected ? 'active' : ''}`}
+                        data-price={p.price}
+                        data-name={p.name}
+                        data-wa-url={`${baseWaUrl}?text=${encodeURIComponent(`Halo Filtory, saya mau pesan ${product.name} - ${p.name} (${p.price})`)}`}
+                      >
+                        {p.name} ({p.price})
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            <!-- FOOTER BADGE & ACTION BUTTON (CTA) -->
+            <div class="acc-footer-row">
+              {product.bottomBadge && (
+                <div class="acc-bottom-badge">
+                  <span>{product.bottomBadge}</span>
+                </div>
+              )}
+
+              <div class="acc-cta-wrap">
+                <a 
+                  href={`${baseWaUrl}?text=${encodeURIComponent(initialWaText)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="acc-cta-btn"
+                >
+                  <span>Pesan via WhatsApp</span>
+                  <span class="acc-arrow">→</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </article>
+    );
+  })}
+</div>
+
+<script is:inline>
+  function setupProductAccordion() {
+    const list = document.getElementById('product-accordion-list');
+    if (!list) return;
+
+    const cards = list.querySelectorAll('.acc-card');
+
+    cards.forEach((card) => {
+      const header = card.querySelector('.acc-header');
+      const priceTarget = card.querySelector('.acc-price-target');
+      const ctaBtn = card.querySelector('.acc-cta-btn');
+      const planBtns = card.querySelectorAll('.acc-plan-btn');
+
+      // Click header to toggle expand/collapse
+      header.addEventListener('click', (e) => {
+        const isExpanded = card.classList.contains('is-expanded');
+        
+        // Close others for clean single-expanded view
+        cards.forEach((c) => {
+          if (c !== card) {
+            c.classList.remove('is-expanded');
+            const h = c.querySelector('.acc-header');
+            if (h) h.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        if (isExpanded) {
+          card.classList.remove('is-expanded');
+          header.setAttribute('aria-expanded', 'false');
+        } else {
+          card.classList.add('is-expanded');
+          header.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Handle plan buttons switching
+      planBtns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          planBtns.forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const newPrice = btn.getAttribute('data-price');
+          const newWaUrl = btn.getAttribute('data-wa-url');
+
+          if (priceTarget && newPrice) {
+            priceTarget.textContent = newPrice;
+          }
+          if (ctaBtn && newWaUrl) {
+            ctaBtn.setAttribute('href', newWaUrl);
+          }
+        });
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupProductAccordion);
+  } else {
+    setupProductAccordion();
+  }
+</script>
